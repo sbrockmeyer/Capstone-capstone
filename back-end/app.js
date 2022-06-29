@@ -4,8 +4,8 @@ const cors = require('cors');
 
 // connection to different JS files for the different Data
 const wordDatabase = require('./term'); //wordDatabase.DA.jfoej
-const peopleDatabse = require('./user'); //peopleDatabase.DA.jfoej
-const shopDatabse = require('./shop'); //shopDatabase.DA.jfoej
+const peopleDatabase = require('./user'); //peopleDatabase.DA.jfoej
+const shopDatabase = require('./shop'); //shopDatabase.DA.jfoej
 
 // creating port and using express
 const app = express();
