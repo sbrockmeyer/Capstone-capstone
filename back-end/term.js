@@ -1,5 +1,5 @@
 // connecting to Mongo
-const { MongoClient, ObjectID } = require('mongodb');
+const { MongoClient, ObjectID, ObjectId } = require('mongodb');
 const uri = "mongodb+srv://Cap:pass@maindata.0baa5xo.mongodb.net/?retryWrites=true&w=majority";
 
 // creating the database names and collection names
@@ -78,7 +78,7 @@ exports.DA = {
             const db = client.db(dbName);
             const collection = db.collection(collectionName);
 
-            var query = {_id: new ObjectID(id)};
+            var query = {_id: new ObjectId(id)};
 
             var results = await collection.deleteOne(query);
 
