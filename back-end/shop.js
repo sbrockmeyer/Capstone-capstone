@@ -123,7 +123,5 @@ exports.DA = {
         } finally {
             client.close();
         }
-    },
-
-    // search for shop
+    }
 }
