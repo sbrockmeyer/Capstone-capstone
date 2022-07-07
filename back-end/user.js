@@ -8,17 +8,21 @@ const collectionName = 'person';
 
 // what the app.js can use
 exports.DA = {
-    createUser: async function(){
+    createUser: async function (firstName, lastName, username, password, email) {
         console.log(`createUser`);
 
         const client = await MongoClient.connect(uri);
 
-        try{
+        try {
             const db = client.db(dbName);
             const collection = db.collection(collectionName);
 
-            var newUser ={
-
+            var newUser = {
+                FName: firstName,
+                LName: lastName,
+                Username: username,
+                Pass: password,
+                Email: email
             }
 
             var results = await collection.insertOne(newUser);
@@ -27,27 +31,31 @@ exports.DA = {
             console.log(results);
 
             return results;
-        }catch(e){
+        } catch (e) {
             console.log(`Uh oh something broke in peopleDatabase.DA.createUser`);
             console.log(e);
-        }finally{
+        } finally {
             client.close()
         }
     },
 
-    updateUser: async function(){
+    updateUser: async function (firstName, lastName, username, password, email) {
         console.log(`updateUser`);
 
         const client = await MongoClient.connect(uri);
 
-        try{
+        try {
             const db = client.db(dbName);
             const collection = db.collection(collectionName);
 
-            var query = {_id: new ObjectId(id)};
-            var update={
-                $set:{
-
+            var query = { _id: new ObjectId(id) };
+            var update = {
+                $set: {
+                    FName: firstName,
+                    LName: lastName,
+                    Username: username,
+                    Pass: password,
+                    Email: email
                 }
             }
 
@@ -57,13 +65,13 @@ exports.DA = {
             console.log(results);
 
             return results;
-        }catch(e){
+        } catch (e) {
             console.log(`Uhhhh something broke in peopleDatabase.DA.updateUser`);
             console.log(e);
-        }finally{
+        } finally {
             client.close()
         }
     },
 
-    
+
 }
