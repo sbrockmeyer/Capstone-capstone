@@ -9,10 +9,21 @@ import Home from './components/Home';
 
 function App() {
 
+  const [login, setLoggingin] = useState([]);
+  const [searchedShop, setSearchedShop] = useState('');
+  const [shop, setShop] = useState([]);
+  const [selectedShop, setSelectedShop] = useState([]);
+
+  const shopPicked = (shop)=>{
+    setSelectedShop(shop);
+    console.log(shop);
+    console.log(selectedShop);
+  }
 
   return (
     <div className="App">
       <Home/>
+      <a href='Login.js' >Login</a> / <a href='CreateUser'>SignUp</a>
     </div>
   );
 }
