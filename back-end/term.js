@@ -1,5 +1,5 @@
 // connecting to Mongo
-const { MongoClient, ObjectID, ObjectId } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 const uri = "mongodb+srv://Cap:pass@maindata.0baa5xo.mongodb.net/?retryWrites=true&w=majority";
 
 // creating the database names and collection names
@@ -24,6 +24,7 @@ exports.DA = {
             console.log(`here are your results for looking for all words`);
             console.log(results);
 
+            return results;
         }catch(e){
             console.log(`uh oh something broke in wordDatabase.DA.getAllWords`);
             console.log(e);

@@ -23,9 +23,16 @@ app.get('/wordsapi', async function(req, res){
     var words = await wordDatabase.DA.getAllWords();
     console.log(`here is all of your stuff from the api`);
     console.log(words);
+
     res.json(words);
 });
+// add word
 
+// update word
+
+// delete word
+
+// api for the front end to connect for the shops
 app.get('/shopapi', async function(req, res){
     var shop = await shopDatabase.DA.getAllShops();
     console.log(`here are all the shops`);
@@ -33,6 +40,7 @@ app.get('/shopapi', async function(req, res){
     res.json(shop);
 })
 
+// 
 
 
 

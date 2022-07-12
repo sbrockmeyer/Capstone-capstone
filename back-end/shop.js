@@ -24,6 +24,7 @@ exports.DA = {
             console.log(`here are all of your shops`);
             console.log(results);
 
+            return results;
         } catch (e) {
             console.log(`oh no something broke in shopDatabase.DA.getAllShops`);
             console.log(e)
