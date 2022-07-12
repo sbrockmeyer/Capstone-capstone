@@ -34,7 +34,7 @@ exports.DA = {
     },
 
     // if the word isnt in the dictionary user can add it
-    createWord: async function(English, Uk, German, Swedish, Spanish, Italian, French, Polish){
+    createWord: async function(English, Uk, German, Swedish, Spanish, Italian, French, Polish, Definition){
         console.log(`createWord`);
 
         const client = await MongoClient.connect(uri);
@@ -51,7 +51,8 @@ exports.DA = {
                 Spanish: Spanish,
                 Italian: Italian,
                 French: French,
-                Polish: Polish
+                Polish: Polish,
+                Definition: Definition
             }
 
             var resutls = await collection.insertOne(newWord);
@@ -97,7 +98,7 @@ exports.DA = {
     },
 
     // update word in case miss spelling happens or a word is incorrect
-    updateWord: async function(English, Uk, German, Swedish, Spanish, Italian, French, Polish){
+    updateWord: async function(English, Uk, German, Swedish, Spanish, Italian, French, Polish, Definition){
         console.log(`updateWord`);
 
         const client = await MongoClient.connect(uri);
@@ -116,7 +117,8 @@ exports.DA = {
                     Spanish: Spanish,
                     Italian: Italian,
                     French: French,
-                    Polish: Polish
+                    Polish: Polish,
+                    Definition: Definition
                 }
             }
 
