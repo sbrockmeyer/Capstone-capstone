@@ -123,26 +123,26 @@ app.post('/updateShop', async function (req, res) {
 
 // create user
 app.post('/createUser', async function (req, res) {
-  bcrypt
-    .hash(req.body.password, 10)
-    .then((hashedPassword) =>{
-      var pass = hashedPassword
-      var firstName = req.body.fName
-      var lastName = req.body.lastName
-      var email = req.body.email
+  // bcrypt
+    // .hash(req.body.password, 10)
+    // .then((hashedPassword) =>{
+    //   var pass = hashedPassword
+    //   var firstName = req.body.fName
+    //   var lastName = req.body.lastName
+    //   var email = req.body.email
     
-      peopleDatabase.DA.createUser(
-        firstName,
-        lastName,
-        pass,
-        email        
-      )
-    })
+    //   peopleDatabase.DA.createUser(
+    //     firstName,
+    //     lastName,
+    //     pass,
+    //     email        
+    //   )
+    // })
 })
 
 // login
 app.post('/login', async function(req,res){
-  
+
 })
 
 // logout
