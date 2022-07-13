@@ -1,6 +1,7 @@
 // everything installed
 const express = require('express');
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 
 // connection to different JS files for the different Data
 const wordDatabase = require('./term'); //wordDatabase.DA.jfoej
@@ -16,113 +17,133 @@ app.use(cors());
 
 // initial loading of back-end
 app.get("/", function (req, res) {
-    res.send("Hello welcome if you are looking for the api key for the words its gonna be under '/wordsapi' ");
+  res.send("Hello welcome if you are looking for the api key for the words its gonna be under '/wordsapi' ");
 });
 
 // api for the front end to connect to for the words
 app.get('/wordsapi', async function (req, res) {
-    var words = await wordDatabase.DA.getAllWords();
-    console.log(`here is all of your stuff from the api`);
-    console.log(words);
+  var words = await wordDatabase.DA.getAllWords();
+  console.log(`here is all of your stuff from the api`);
+  console.log(words);
 
-    res.json(words);
+  res.json(words);
 });
 // add word
 // English, Uk, German, Swedish, Spanish, Italian, French, Polish
 app.post('/addword', async function (req, res) {
-    var eng = req.body.English;
-    var uk = req.body.UK;
-    var ger = req.body.German;
-    var swe = req.body.Swedish;
-    var span = req.body.Spanish;
-    var ital = req.body.Italian;
-    var fren = req.body.French;
-    var pol = req.body.Polish;
-    var def = req.body.Definition
+  var eng = req.body.English;
+  var uk = req.body.UK;
+  var ger = req.body.German;
+  var swe = req.body.Swedish;
+  var span = req.body.Spanish;
+  var ital = req.body.Italian;
+  var fren = req.body.French;
+  var pol = req.body.Polish;
+  var def = req.body.Definition
 
-    var word = await wordDatabase.DA.createWord(eng, uk, ger, swe, span, ital, fren, pol, def);
-    
-    res.json(word);
+  var word = await wordDatabase.DA.createWord(eng, uk, ger, swe, span, ital, fren, pol, def);
+
+  res.json(word);
 })
 
 // update word
-app.post('/updateWord', async function(req,res){
-    var id = req.body.wordId
-    var eng = req.body.English;
-    var uk = req.body.UK;
-    var ger = req.body.German;
-    var swe = req.body.Swedish;
-    var span = req.body.Spanish;
-    var ital = req.body.Italian;
-    var fren = req.body.French;
-    var pol = req.body.Polish;
-    var def = req.body.Definition
-    
-    var upWord = await wordDatabase.DA.updateWord(id, eng, uk, ger, swe, span, ital, fren, pol, def);
+app.post('/updateWord', async function (req, res) {
+  var id = req.body.wordId
+  var eng = req.body.English;
+  var uk = req.body.UK;
+  var ger = req.body.German;
+  var swe = req.body.Swedish;
+  var span = req.body.Spanish;
+  var ital = req.body.Italian;
+  var fren = req.body.French;
+  var pol = req.body.Polish;
+  var def = req.body.Definition
 
-    res.json(upWord);
+  var upWord = await wordDatabase.DA.updateWord(id, eng, uk, ger, swe, span, ital, fren, pol, def);
+
+  res.json(upWord);
 })
 
 // delete word
 app.get('/delete/:id', async function (req, res) {
-    console.log(req.params);
+  console.log(req.params);
 
-    var word = await wordDatabase.DA.deleteWord(req.params.id);
-    console.log(word);
+  var word = await wordDatabase.DA.deleteWord(req.params.id);
+  console.log(word);
 
-    res.json(word);
+  res.json(word);
 })
 
 // api for the front end to connect for the shops
 app.get('/shopapi', async function (req, res) {
-    var shop = await shopDatabase.DA.getAllShops();
-    console.log(`here are all the shops`);
-    console.log(shop);
-    res.json(shop);
+  var shop = await shopDatabase.DA.getAllShops();
+  console.log(`here are all the shops`);
+  console.log(shop);
+  res.json(shop);
 })
 
 // create/add shop
 
 // shopName, description, language, country, currency
-app.post('/createShop', async function(req, res){
-    var name = req.body.shopName;
-    var des = req.body.description;
-    var lang = req.body.language;
-    var count = req.body.country;
-    var curr = req.body.currency;
-    
-    var shop = await shopDatabase.DA.addShop(name, des, lang, count, curr);
+app.post('/createShop', async function (req, res) {
+  var name = req.body.shopName;
+  var des = req.body.description;
+  var lang = req.body.language;
+  var count = req.body.country;
+  var curr = req.body.currency;
 
-    res.json(shop);
+  var shop = await shopDatabase.DA.addShop(name, des, lang, count, curr);
+
+  res.json(shop);
 })
 
 // terminate shop
 app.get('/deleteShop/:id', async function (req, res) {
-    console.log(req.params);
+  console.log(req.params);
 
-    var delShop = await shopDatabase.DA.terminateShop(req.params.id);
-    console.log(delShop);
+  var delShop = await shopDatabase.DA.terminateShop(req.params.id);
+  console.log(delShop);
 
-    res.json(delShop);
+  res.json(delShop);
 })
 
 // update/edit shop
-app.post('/updateShop', async function(req, res){
-    var id =  req.body.Id;
-    var name = req.body.shopName;
-    var des = req.body.description;
-    var lang = req.body.language;
-    var count = req.body.country;
-    var curr = req.body.currency;
+app.post('/updateShop', async function (req, res) {
+  var id = req.body.Id;
+  var name = req.body.shopName;
+  var des = req.body.description;
+  var lang = req.body.language;
+  var count = req.body.country;
+  var curr = req.body.currency;
 
-    var upShop = await shopDatabase.DA.editShop(id, name, des, lang, count, curr);
+  var upShop = await shopDatabase.DA.editShop(id, name, des, lang, count, curr);
 
-    res.json(upShop);
+  res.json(upShop);
 })
 
 // create user
+app.post('/createUser', async function (req, res) {
+  bcrypt
+    .hash(req.body.password, 10)
+    .then((hashedPassword) =>{
+      var pass = hashedPassword
+      var firstName = req.body.fName
+      var lastName = req.body.lastName
+      var email = req.body.email
+    
+      peopleDatabase.DA.createUser(
+        firstName,
+        lastName,
+        pass,
+        email        
+      )
+    })
+})
 
 // login
+app.post('/login', async function(req,res){
+  
+})
 
 // logout
 
