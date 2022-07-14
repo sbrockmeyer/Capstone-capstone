@@ -39,7 +39,7 @@ exports.DA = {
         }
     },
 
-    updateUser: async function (firstName, lastName, username, password, email) {
+    updateUser: async function (id, firstName, lastName, username, password, email) {
         console.log(`updateUser`);
 
         const client = await MongoClient.connect(uri);

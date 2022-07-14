@@ -28,6 +28,8 @@ app.get('/wordsapi', async function (req, res) {
 
   res.json(words);
 });
+// http://localhost:4000/wordsapi
+
 // add word
 // English, Uk, German, Swedish, Spanish, Italian, French, Polish
 app.post('/addword', async function (req, res) {
@@ -81,9 +83,9 @@ app.get('/shopapi', async function (req, res) {
   console.log(shop);
   res.json(shop);
 })
+// http://localhost:4000/shopapi
 
 // create/add shop
-
 // shopName, description, language, country, currency
 app.post('/createShop', async function (req, res) {
   var name = req.body.shopName;
@@ -123,27 +125,32 @@ app.post('/updateShop', async function (req, res) {
 
 // create user
 app.post('/createUser', async function (req, res) {
-  // bcrypt
-    // .hash(req.body.password, 10)
-    // .then((hashedPassword) =>{
-    //   var pass = hashedPassword
-    //   var firstName = req.body.fName
-    //   var lastName = req.body.lastName
-    //   var email = req.body.email
-    
-    //   peopleDatabase.DA.createUser(
-    //     firstName,
-    //     lastName,
-    //     pass,
-    //     email        
-    //   )
-    // })
+  var pass = req.body.pass;
+  var firstName = req.body.fName;
+  var lastName = req.body.lastName;
+  var email = req.body.email;
+
+  peopleDatabase.DA.createUser(firstName, lastName, pass, email)
+})
+
+// update user
+app.post('/updateUser', async function (req, res){
+  var pass = req.body.pass;
+  var firstName = req.body.fName;
+  var lastName = req.body.lastName;
+  var email = req.body.email;
+  var id = req.body.id;
+  var username = req.body.username;
+
+  var updateUser = await peopleDatabase.DA.updateUser(id, firstName, lastName, username, pass, email);
+
+  res.json(updateUser);
 })
 
 // login
-app.post('/login', async function(req,res){
+// app.post('/login', async function (req, res) {
 
-})
+// })
 
 // logout
 

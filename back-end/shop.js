@@ -92,7 +92,7 @@ exports.DA = {
     },
 
     // users can edit their shop
-    editShop: async function (shopName, description, language, country, currency) {
+    editShop: async function (id, shopName, description, language, country, currency) {
         console.log(`editShop`);
 
         const client = await MongoClient.connect(uri);
