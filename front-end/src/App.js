@@ -1,10 +1,11 @@
 // import './App.css';
 import './sass/style.scss';
+import { Form } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import Dictionary from './components/Dictionary';
 import AllShops from './components/AllShops';
 import Login from './components/Login';
-import EditUser from './components/EditUser'
+// import EditUser from './components/EditUser'
 import Home from './components/Home';
 import ShopDetails from './components/ShopDetails';
 
