@@ -6,19 +6,28 @@ import AllShops from './components/AllShops';
 import Login from './components/Login';
 import EditUser from './components/EditUser'
 import Home from './components/Home';
+import ShopDetails from './components/ShopDetails';
 
 function App() {
 
   const [login, setLoggingin] = useState([]);
-  const [searchedShop, setSearchedShop] = useState('');
+
+  const [searchedShopName, setSearchedShopName] = useState('');
+  const [allShops, setAllShops] = useState([]);
   const [shop, setShop] = useState([]);
-  const [selectedShop, setSelectedShop] = useState([]);
+  const [selectedShop, setSelectedShop] = useState('');
+
   const [words, setTerms] = useState([]);
+  const [searchedWord, setSearchedWord] = useState('');
 
   const shopPicked = (shop)=>{
     setSelectedShop(shop);
     console.log(shop);
     console.log(selectedShop);
+  }
+
+  const clearShop = () =>{
+    setSelectedShop('');
   }
 
   const getShopData = () =>{
@@ -29,6 +38,7 @@ function App() {
       .then(data =>{
         console.log(data);
         setShop(data);
+        allShops(data);
       }).catch(e => console.log(e));
   }
 
@@ -45,6 +55,7 @@ function App() {
 
   useEffect(()=>{
     getWordData();
+    getShopData();
   }, []);
 
   useEffect(() =>{
@@ -56,6 +67,12 @@ function App() {
     <div className="App">
       <Home/>
       <Dictionary word={words}/>
+      {
+        selectedShop?
+        <ShopDetails shop={selectedShop} clear={clearShop}/> :
+        <AllShops shops={allShops} select={shopPicked}/> 
+      }
+
       {/* <a href='Login.js' >Login</a> / <a href='CreateUser'>SignUp</a> */}
     </div>
   );

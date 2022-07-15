@@ -1,8 +1,13 @@
 import React from 'react'
 
-function Shop() {
+function Shop({shop, select}) {
+  console.log(shop);
   return (
-    <div>Shop</div>
+    <>
+    <div onClick={() => select(shop)}>
+      
+    </div>
+    </>
   )
 }
 

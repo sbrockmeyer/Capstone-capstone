@@ -1,9 +1,13 @@
 import React from 'react'
 import EditShop from './EditShop'
 
-function ShopDetails() {
+function ShopDetails({shop, clear}) {
   return (
-    <div>ShopDetails</div>
+    <>
+      <div>
+
+      </div>
+    </>
   )
 }
 
