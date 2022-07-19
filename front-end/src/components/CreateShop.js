@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 function CreateShop() {
-	const [ShopName, setNameShop] = useState('');
+	const [shopName, setNameShop] = useState('');
 	const [description, setDescription] = useState('');
 	const [lang, setLanguage] = useState('');
 	const [country, setCountry] = useState('');
@@ -15,7 +15,7 @@ function CreateShop() {
 			let res = await fetch(``, {
 				method: "POST",
 				body: JSON.stringify({
-					shopname: ShopName,
+					shopname: shopName,
 					description: description,
 					lang: lang,
 					country: country,
@@ -27,7 +27,6 @@ function CreateShop() {
 
 			if (res.status === 200) {
 				setNameShop("");
-				setDescription("");
 				setDescription("");
 				setLanguage("");
 				setCountry("");
@@ -45,7 +44,9 @@ function CreateShop() {
 		<>
 			<div>
 				<form onSubmit={handleSubmit}>
-					
+					<input type='text' value={shopName} placeholder="Shop Name" onChange={(e) => setShopName(e.target.value)} />
+					<input type='text' value={description} placeholder="shop description" onChange={(e) => setDescription(e.target.value)}/>
+					<input type='text' value={lang} placeholder="language" onChange={(e)=>setLanguage(e.target.value)}/>
 				</form>
 			</div>
 		</>
