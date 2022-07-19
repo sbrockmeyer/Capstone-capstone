@@ -90,11 +90,11 @@ app.get('/shopapi', async function (req, res) {
 // shopName, description, language, country, currency
 app.post('/createShop', async function (req, res) {
   console.log(req.body);
-  // var name = req.body.shopName;
-  // var des = req.body.description;
-  // var lang = req.body.language;
-  // var count = req.body.country;
-  // var curr = req.body.currency;
+  var name = req.body.shopName;
+  var des = req.body.description;
+  var lang = req.body.language;
+  var count = req.body.country;
+  var curr = req.body.currency;
 
   console.log('rawr');
 
