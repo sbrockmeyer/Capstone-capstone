@@ -13,6 +13,7 @@ const { json } = require('express');
 const app = express();
 const PORT = 4000;
 
+app.use(express.json());
 app.use(cors());
 
 // initial loading of back-end
@@ -88,11 +89,14 @@ app.get('/shopapi', async function (req, res) {
 // create/add shop
 // shopName, description, language, country, currency
 app.post('/createShop', async function (req, res) {
-  var name = req.body.shopName;
-  var des = req.body.description;
-  var lang = req.body.language;
-  var count = req.body.country;
-  var curr = req.body.currency;
+  console.log(req.body);
+  // var name = req.body.shopName;
+  // var des = req.body.description;
+  // var lang = req.body.language;
+  // var count = req.body.country;
+  // var curr = req.body.currency;
+
+  console.log('rawr');
 
   var shop = await shopDatabase.DA.addShop(name, des, lang, count, curr);
 

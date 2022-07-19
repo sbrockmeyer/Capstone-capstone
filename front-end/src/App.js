@@ -75,7 +75,9 @@ function App() {
         <AllShops shops={allShops} select={shopPicked}/> 
       } */}
 
-      <a href='CreateShop.js'>createShop</a>
+      {/* <a href='CreateShop.js'> */}
+        <CreateShop/>
+      {/* </a> */}
       {/* <a href='Login.js' >Login</a> / <a href='CreateUser'>SignUp</a> */}
     </div>
   );

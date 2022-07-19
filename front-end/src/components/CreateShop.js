@@ -12,8 +12,11 @@ function CreateShop() {
 		e.preventDefault();
 		try {
 
-			let res = await fetch(`http://localhost:4000/createShop/post`, {
+			let res = await fetch(`http://localhost:4000/createShop`, {
 				method: "POST",
+				headers:{
+					'Content-Type': "application/json",
+				},
 				body: JSON.stringify({
 					shopname: shopName,
 					description: description,
@@ -52,7 +55,7 @@ function CreateShop() {
 
 					<button type='submit'>Create Shop</button>
 
-					<div>{message ? <p>{message} </p> : null}</div>
+					{/* <div>{message ? <p>{message} </p> : null}</div> */}
 				</form>
 			</div>
 		</>
