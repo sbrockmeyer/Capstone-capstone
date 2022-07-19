@@ -8,6 +8,7 @@ import Login from './components/Login';
 // import EditUser from './components/EditUser'
 import Home from './components/Home';
 import ShopDetails from './components/ShopDetails';
+import CreateShop from './components/CreateShop';
 
 function App() {
 
@@ -54,26 +55,27 @@ function App() {
       }).catch(e => console.log(e));
   }
 
-  useEffect(()=>{
-    getWordData();
-    getShopData();
-  }, []);
+  // useEffect(()=>{
+  //   getWordData();
+  //   getShopData();
+  // }, []);
 
-  useEffect(() =>{
-    console.log(`useeffect words`);
-    console.log(words);
-  }, [words]);
+  // useEffect(() =>{
+  //   console.log(`useeffect words`);
+  //   console.log(words);
+  // }, [words]);
 
   return (
     <div className="App">
       <Home/>
-      <Dictionary word={words}/>
-      {
+      {/* <Dictionary word={words}/> */}
+      {/* {
         selectedShop?
         <ShopDetails shop={selectedShop} clear={clearShop}/> :
         <AllShops shops={allShops} select={shopPicked}/> 
-      }
+      } */}
 
+      <a href='CreateShop.js'>createShop</a>
       {/* <a href='Login.js' >Login</a> / <a href='CreateUser'>SignUp</a> */}
     </div>
   );

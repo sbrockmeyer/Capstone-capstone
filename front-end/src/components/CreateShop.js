@@ -12,7 +12,7 @@ function CreateShop() {
 		e.preventDefault();
 		try {
 
-			let res = await fetch(``, {
+			let res = await fetch(`http://localhost:4000/createShop/post`, {
 				method: "POST",
 				body: JSON.stringify({
 					shopname: shopName,
@@ -44,9 +44,15 @@ function CreateShop() {
 		<>
 			<div>
 				<form onSubmit={handleSubmit}>
-					<input type='text' value={shopName} placeholder="Shop Name" onChange={(e) => setShopName(e.target.value)} />
+					<input type='text' value={shopName} placeholder="Shop Name" onChange={(e) => setNameShop(e.target.value)} />
 					<input type='text' value={description} placeholder="shop description" onChange={(e) => setDescription(e.target.value)}/>
 					<input type='text' value={lang} placeholder="language" onChange={(e)=>setLanguage(e.target.value)}/>
+					<input type="text" value={country} placeholder="country" onChange={(e) => setCountry(e.target.value)}/>
+					<input type="text" value={currency} placeholder="currency" onChange={(e) => setCurrency(e.target.value)}/>
+
+					<button type='submit'>Create Shop</button>
+
+					<div>{message ? <p>{message} </p> : null}</div>
 				</form>
 			</div>
 		</>
