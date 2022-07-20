@@ -77,7 +77,8 @@ function App() {
       } */}
 
       {/* <a href='CreateShop.js'> */}
-        <CreateUser/>
+        {/* <CreateUser/> */}
+        <CreateShop/>
       {/* </a> */}
       {/* <a href='Login.js' >Login</a> / <a href='CreateUser'>SignUp</a> */}
     </div>

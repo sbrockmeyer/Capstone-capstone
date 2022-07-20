@@ -18,9 +18,9 @@ function CreateShop() {
 					'Content-Type': "application/json",
 				},
 				body: JSON.stringify({
-					shopname: shopName,
+					shopName: shopName,
 					description: description,
-					lang: lang,
+					language: lang,
 					country: country,
 					currency: currency,
 				}),
