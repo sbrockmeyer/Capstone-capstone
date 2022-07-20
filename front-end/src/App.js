@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import ShopDetails from './components/ShopDetails';
 import CreateShop from './components/CreateShop';
+import CreateUser from './components/CreateUser';
 
 function App() {
 
@@ -76,7 +77,7 @@ function App() {
       } */}
 
       {/* <a href='CreateShop.js'> */}
-        <CreateShop/>
+        <CreateUser/>
       {/* </a> */}
       {/* <a href='Login.js' >Login</a> / <a href='CreateUser'>SignUp</a> */}
     </div>

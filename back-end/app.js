@@ -131,10 +131,11 @@ app.post('/updateShop', async function (req, res) {
 app.post('/createUser', async function (req, res) {
   var pass = req.body.pass;
   var firstName = req.body.fName;
-  var lastName = req.body.lastName;
+  var lastName = req.body.lName;
   var email = req.body.email;
+  var username = req.body.username;
 
-  peopleDatabase.DA.createUser(firstName, lastName, pass, email)
+  peopleDatabase.DA.createUser(firstName, lastName,username, pass, email)
 })
 
 // update user
