@@ -33,7 +33,7 @@ app.get('/wordsapi', async function (req, res) {
 
 // add word
 // English, Uk, German, Swedish, Spanish, Italian, French, Polish
-app.post('/addword', async function (req, res) {
+app.post('/addWord', async function (req, res) {
   var eng = req.body.English;
   var uk = req.body.UK;
   var ger = req.body.German;

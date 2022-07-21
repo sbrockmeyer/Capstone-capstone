@@ -1,18 +1,18 @@
 import React from 'react';
 import Shop from './Shop';
 
-function AllShops({shops, select}) {
+function AllShops({ shops }) {
 
   console.log(shops);
 
   return (
     <>
       <div>
-        {shops?.map((shops)=>{
+        {shops?.map((shops) =>(
           <div key={shops._id}>
-            <Shop shop={shops} select={select}/>
+            <Shop shops={shops} />
           </div>
-        })}
+        ))}
       </div>
     </>
   )

@@ -26,8 +26,6 @@ function CreateShop() {
 				}),
 			});
 
-			let resJson = await res.json();
-
 			if (res.status === 200) {
 				setNameShop("");
 				setDescription("");

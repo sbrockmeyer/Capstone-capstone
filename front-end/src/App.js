@@ -1,37 +1,38 @@
 // import './App.css';
 import './sass/style.scss';
-import { Form } from 'react-bootstrap';
+// import { Form } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
-import Dictionary from './components/Dictionary';
+// import Dictionary from './components/Dictionary';
 import AllShops from './components/AllShops';
-import Login from './components/Login';
+// import Login from './components/Login';
 // import EditUser from './components/EditUser'
 import Home from './components/Home';
-import ShopDetails from './components/ShopDetails';
-import CreateShop from './components/CreateShop';
-import CreateUser from './components/CreateUser';
+// import ShopDetails from './components/ShopDetails';
+// import CreateShop from './components/CreateShop';
+// import CreateUser from './components/CreateUser';
+// import CreateWord from './components/CreateWord';
 
 function App() {
 
-  const [login, setLoggingin] = useState([]);
+  // const [login, setLoggingin] = useState([]);
 
-  const [searchedShopName, setSearchedShopName] = useState('');
+  // const [searchedShopName, setSearchedShopName] = useState('');
   const [allShops, setAllShops] = useState([]);
-  const [shop, setShop] = useState([]);
-  const [selectedShop, setSelectedShop] = useState('');
+  // const [shop, setShop] = useState([]);
+  // const [selectedShop, setSelectedShop] = useState('');
 
-  const [words, setTerms] = useState([]);
-  const [searchedWord, setSearchedWord] = useState('');
+  // const [words, setTerms] = useState([]);
+  // const [searchedWord, setSearchedWord] = useState('');
 
-  const shopPicked = (shop)=>{
-    setSelectedShop(shop);
-    console.log(shop);
-    console.log(selectedShop);
-  }
+  // const shopPicked = (shop)=>{
+  //   setSelectedShop(shop);
+  //   console.log(shop);
+  //   console.log(selectedShop);
+  // }
 
-  const clearShop = () =>{
-    setSelectedShop('');
-  }
+  // const clearShop = () =>{
+  //   setSelectedShop('');
+  // }
 
   const getShopData = () =>{
     var urlShop = `http://localhost:4000/shopapi`;
@@ -40,26 +41,26 @@ function App() {
       .then(resp => resp.json())
       .then(data =>{
         console.log(data);
-        setShop(data);
-        allShops(data);
+        // setShop(data);
+        setAllShops(data);
       }).catch(e => console.log(e));
   }
 
-  const getWordData = () =>{
-    var urlWord = `http://localhost:4000/wordsapi`;
+  // const getWordData = () =>{
+  //   var urlWord = `http://localhost:4000/wordsapi`;
 
-    fetch(urlWord)
-      .then(resp => resp.json())
-      .then(data =>{
-        console.log(data);
-        setTerms(data);
-      }).catch(e => console.log(e));
-  }
+  //   fetch(urlWord)
+  //     .then(resp => resp.json())
+  //     .then(data =>{
+  //       console.log(data);
+  //       setTerms(data);
+  //     }).catch(e => console.log(e));
+  // }
 
-  // useEffect(()=>{
-  //   getWordData();
-  //   getShopData();
-  // }, []);
+  useEffect(()=>{
+    // getWordData();
+    getShopData();
+  }, []);
 
   // useEffect(() =>{
   //   console.log(`useeffect words`);
@@ -69,16 +70,17 @@ function App() {
   return (
     <div className="App">
       <Home/>
+      <AllShops shops={allShops}/> 
       {/* <Dictionary word={words}/> */}
       {/* {
         selectedShop?
         <ShopDetails shop={selectedShop} clear={clearShop}/> :
-        <AllShops shops={allShops} select={shopPicked}/> 
       } */}
 
       {/* <a href='CreateShop.js'> */}
         {/* <CreateUser/> */}
-        <CreateShop/>
+        {/* <CreateShop/> */}
+        {/* <CreateWord/> */}
       {/* </a> */}
       {/* <a href='Login.js' >Login</a> / <a href='CreateUser'>SignUp</a> */}
     </div>

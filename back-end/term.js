@@ -55,7 +55,7 @@ exports.DA = {
                 Definition: Definition
             }
 
-            var resutls = await collection.insertOne(newWord);
+            var results = await collection.insertOne(newWord);
             
             console.log(`Yay you created a word!`);
             console.log(results);
