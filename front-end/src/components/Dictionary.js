@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import Word from './Word'
 
 function Dictionary() {
@@ -23,16 +23,16 @@ function Dictionary() {
   }, []);
 
 
-  console.log(word);
+  // console.log(word);
   
   return (
     <>
       <div>
-        {word?.map((word)=>(
+        {/* {word?.map((word)=>(
           <div key={word._id}>
-            <Word term={word}/>
-          </div>
-        ))}
+            <Word term={word}/> */}
+          {/* </div> */}
+        {/* ))} */}
       </div>
     </>
   )

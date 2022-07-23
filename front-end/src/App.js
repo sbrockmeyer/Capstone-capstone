@@ -9,6 +9,12 @@ import ShopDetails from './components/ShopDetails';
 import CreateShop from './components/CreateShop';
 import CreateUser from './components/CreateUser';
 import CreateWord from './components/CreateWord';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
 
@@ -17,9 +23,24 @@ function App() {
   
 
   return (
-    <div className="App">
-      <Home/>
-    </div>
+    <Router>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/logIn">LogIn</Link>
+        <Link to="/dictionary">Dictionary</Link>
+      </nav>
+      <Switch>
+        <Route path="/">
+          <Home/>
+        </Route>
+        <Route path="/logIn">
+          <Login/>
+        </Route>
+        <Route path="/dictionary">
+          <Dictionary/>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

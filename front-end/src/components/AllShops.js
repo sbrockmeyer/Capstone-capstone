@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Shop from './Shop';
 
 
@@ -39,11 +39,11 @@ function AllShops() {
   return (
     <>
       <div>
-        {shops?.map((shops) => (
-          <div key={shops._id}>
+        {/* {shops?.map((shops) => ( */}
+          {/* <div key={shops._id}>
             <Shop shops={shops} />
           </div>
-        ))}
+        ))} */}
       </div>
     </>
   )
