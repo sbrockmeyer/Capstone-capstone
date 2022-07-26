@@ -39,11 +39,11 @@ function AllShops() {
   return (
     <>
       <div>
-        {/* {shops?.map((shops) => ( */}
-          {/* <div key={shops._id}>
-            <Shop shops={shops} />
+        {allShops?.map((allShops) => (
+            <div key={allShops._id}>
+            <Shop shops={allShops} />
           </div>
-        ))} */}
+        ))}
       </div>
     </>
   )

@@ -23,7 +23,9 @@ function App() {
         <button onClick={() => setScreen("create word")}>Create Word</button>
         <button onClick={() => setScreen("login")}>Login</button>
         <button onClick={() => setScreen("dictionary")}>Dictionary</button>
+        <button onClick={() => setScreen("shops")}>See all shops</button>
       </nav>
+      <br/>
       {
         screen === "home" ?
         <Home/>
@@ -37,6 +39,8 @@ function App() {
         <CreateShop/>
         : screen === "create word" ?
         <CreateWord/>
+        :screen === "shops" ?
+        <AllShops/>
         : null
       }
     </div>

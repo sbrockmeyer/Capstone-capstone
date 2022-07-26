@@ -23,16 +23,16 @@ function Dictionary() {
   }, []);
 
 
-  // console.log(word);
+  console.log(words);
   
   return (
     <>
       <div>
-        {/* {word?.map((word)=>(
-          <div key={word._id}>
-            <Word term={word}/> */}
-          {/* </div> */}
-        {/* ))} */}
+        {words?.map((words)=>(
+          <div key={words._id}>
+            <Word term={words}/>
+          </div>
+        ))}
       </div>
     </>
   )

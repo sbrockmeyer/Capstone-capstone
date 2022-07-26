@@ -3,3 +3,19 @@
 @import 'button.scss';
 @import 'form.scss';
 
+div{
+    background-color: $peach;
+}
+
+.box{
+    border: 5px solid $silver;
+    padding: 10px;
+    margin: 10px;
+}
+
+h1{
+    font-family: $main;
+}
+h3{
+    font-family: $second;
+}

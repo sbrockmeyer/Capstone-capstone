@@ -1,6 +1,7 @@
 import React from 'react'
 
-function EditShop() {
+function EditShop({id}) {
+  console.log(id)
   return (
     <div>EditShop</div>
   )
