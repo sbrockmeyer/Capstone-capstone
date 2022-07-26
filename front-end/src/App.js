@@ -19,6 +19,8 @@ function App() {
       <nav>
         <button onClick={() => setScreen("home")}>Home</button>
         <button onClick={() => setScreen("create user")}>Create User</button>
+        <button onClick={() => setScreen("create shop")}>Create Shop</button>
+        <button onClick={() => setScreen("create word")}>Create Word</button>
         <button onClick={() => setScreen("login")}>Login</button>
         <button onClick={() => setScreen("dictionary")}>Dictionary</button>
       </nav>
@@ -31,6 +33,10 @@ function App() {
         <Login/>
         : screen === "dictionary" ?
         <Dictionary/>
+        : screen === "create shop" ?
+        <CreateShop/>
+        : screen === "create word" ?
+        <CreateWord/>
         : null
       }
     </div>
