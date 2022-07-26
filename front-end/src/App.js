@@ -1,14 +1,13 @@
 import './sass/style.scss';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import Dictionary from './components/Dictionary';
 import AllShops from './components/AllShops';
 import Login from './components/Login';
-import EditUser from './components/EditUser'
 import Home from './components/Home';
-import ShopDetails from './components/ShopDetails';
 import CreateShop from './components/CreateShop';
 import CreateUser from './components/CreateUser';
 import CreateWord from './components/CreateWord';
+import logo from './images/Logo.png';
 
 
 function App() {
@@ -16,6 +15,8 @@ function App() {
   
   return (
     <div>
+      <img className='logo' src={logo} alt='logo'width="115" height="105"/>
+      <br/>
       <nav>
         <button onClick={() => setScreen("home")}>Home</button>
         <button onClick={() => setScreen("create user")}>Create User</button>
