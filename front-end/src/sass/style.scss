@@ -3,6 +3,18 @@
 @import 'button.scss';
 @import 'form.scss';
 
+.navbutton{
+    background-color: $pastelGreen;
+    border: 3px solid darken($pastelGreen, 20%);
+    color:$black;
+    cursor: pointer;
+    font-family: $second;
+    &:hover{
+        background-color: darken($pastelGreen, 30%);
+        border: 3px solid $pastelGreen;
+    }
+}
+
 div{
     background-color: $peach;
 }
@@ -15,7 +27,12 @@ div{
 
 h1{
     font-family: $main;
+    text-align: center;
 }
 h3{
     font-family: $second;
+    text-align: center;
+}
+form{
+    text-align: center;
 }

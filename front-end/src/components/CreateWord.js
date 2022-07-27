@@ -70,15 +70,15 @@ function CreateWord() {
 		<>
 			<div>
 				<form onSubmit={handleSubmit}>
-					<input type="text" value={eng} placeholder="English" onChange={(e) => setEnglish(e.target.value)}/>
-					<input type="text" value={uk} placeholder="UK/Australia" onChange={(e) => setUK(e.target.value)}/>
-					<input type="text" value={ger} placeholder="German" onChange={(e) => setGerman(e.target.value)}/>
-					<input type="text" value={swe} placeholder="Swedish" onChange={(e) => setSwedish(e.target.value)}/>
-					<input type="text" value={span} placeholder="Spanish" onChange={(e) => setSpanish(e.target.value)}/>
-					<input type="text" value={ital} placeholder="Italian" onChange={(e) => setIalian(e.target.value)}/>
-					<input type="text" value={fren} placeholder="French" onChange={(e) => setFrench(e.target.value)}/>
-					<input type="text" value={pol} placeholder="Polish" onChange={(e) => setPolish(e.target.value)}/>
-					<input type="text" value={def} placeholder="Definition" onChange={(e) => setDefinition(e.target.value)}/>
+					<input type="text" value={eng} placeholder="English" onChange={(e) => setEnglish(e.target.value)}/><br/><br/>
+					<input type="text" value={uk} placeholder="UK/Australia" onChange={(e) => setUK(e.target.value)}/><br/><br/>
+					<input type="text" value={ger} placeholder="German" onChange={(e) => setGerman(e.target.value)}/><br/><br/>
+					<input type="text" value={swe} placeholder="Swedish" onChange={(e) => setSwedish(e.target.value)}/><br/><br/>
+					<input type="text" value={span} placeholder="Spanish" onChange={(e) => setSpanish(e.target.value)}/><br/><br/>
+					<input type="text" value={ital} placeholder="Italian" onChange={(e) => setIalian(e.target.value)}/><br/><br/>
+					<input type="text" value={fren} placeholder="French" onChange={(e) => setFrench(e.target.value)}/><br/><br/>
+					<input type="text" value={pol} placeholder="Polish" onChange={(e) => setPolish(e.target.value)}/><br/><br/>
+					<input type="text" value={def} placeholder="Definition" onChange={(e) => setDefinition(e.target.value)}/><br/><br/>
 
 					<button type='submit'>Create Word</button>
 					

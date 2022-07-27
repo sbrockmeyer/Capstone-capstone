@@ -15,16 +15,16 @@ function App() {
   
   return (
     <div>
-      <img className='logo' src={logo} alt='logo'width="115" height="105"/>
-      <br/>
+      {/* <br/> */}
       <nav>
-        <button onClick={() => setScreen("home")}>Home</button>
-        <button onClick={() => setScreen("create user")}>Create User</button>
-        <button onClick={() => setScreen("create shop")}>Create Shop</button>
-        <button onClick={() => setScreen("create word")}>Create Word</button>
-        <button onClick={() => setScreen("login")}>Login</button>
-        <button onClick={() => setScreen("dictionary")}>Dictionary</button>
-        <button onClick={() => setScreen("shops")}>See all shops</button>
+        <img className='logo' src={logo} alt='logo'width="115" height="105"/>
+        <button className='navButton' onClick={() => setScreen("home")}>Home</button>
+        <button className='navButton' onClick={() => setScreen("create user")}>Create User</button>
+        <button className='navButton' onClick={() => setScreen("create shop")}>Create Shop</button>
+        <button className='navButton' onClick={() => setScreen("create word")}>Create Word</button>
+        <button className='navButton' onClick={() => setScreen("login")}>Login</button>
+        <button className='navButton' onClick={() => setScreen("dictionary")}>Dictionary</button>
+        <button className='navButton' onClick={() => setScreen("shops")}>See all shops</button>
       </nav>
       <br/>
       {

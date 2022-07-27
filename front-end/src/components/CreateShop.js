@@ -45,11 +45,11 @@ function CreateShop() {
 		<>
 			<div>
 				<form onSubmit={handleSubmit}>
-					<input type='text' value={shopName} placeholder="Shop Name" onChange={(e) => setNameShop(e.target.value)} />
-					<input type='text' value={description} placeholder="shop description" onChange={(e) => setDescription(e.target.value)}/>
-					<input type='text' value={lang} placeholder="language" onChange={(e)=>setLanguage(e.target.value)}/>
-					<input type="text" value={country} placeholder="country" onChange={(e) => setCountry(e.target.value)}/>
-					<input type="text" value={currency} placeholder="currency" onChange={(e) => setCurrency(e.target.value)}/>
+					<input type='text' value={shopName} placeholder="Shop Name" onChange={(e) => setNameShop(e.target.value)} /><br/><br/>
+					<input type='text' value={description} placeholder="shop description" onChange={(e) => setDescription(e.target.value)}/><br/><br/>
+					<input type='text' value={lang} placeholder="language" onChange={(e)=>setLanguage(e.target.value)}/><br/><br/>
+					<input type="text" value={country} placeholder="country" onChange={(e) => setCountry(e.target.value)}/><br/><br/>
+					<input type="text" value={currency} placeholder="currency" onChange={(e) => setCurrency(e.target.value)}/><br/><br/>
 
 					<button type='submit'>Create Shop</button>
 
