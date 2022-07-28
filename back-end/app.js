@@ -127,6 +127,14 @@ app.post('/updateShop', async function (req, res) {
   res.json(upShop);
 })
 
+// get all users
+app.get('/allUsers', async function(req,res){
+  var user = await peopleDatabase.DA.getAllUsers();
+  console.log(`here are all the users`);
+  console.log(user);
+  res.json(user);
+})
+
 // create user
 app.post('/createUser', async function (req, res) {
   var pass = req.body.pass;

@@ -8,6 +8,27 @@ const collectionName = 'person';
 
 // what the app.js can use
 exports.DA = {
+    getAllUsers: async function(){
+        console.log(`getAllUsers`);
+
+        const client = await MongoClient.connect(uri);
+        try{
+            const db = client.db(dbName);
+            const collection = db.collection(collectionName);
+
+            var query = {};
+            var results = await collection.find(query).toArray();
+
+            console.log(`here are your results`);
+            console.log(results);
+        }catch(e){
+            console.log(`something broke here is your error in peopleDatabase.DA.getAllUsers`);
+            console.log(e);
+        }finally{
+            client.close();
+        }
+    },
+
     createUser: async function (firstName, lastName, username, password, email) {
         console.log(`createUser`);
 
