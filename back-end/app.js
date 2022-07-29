@@ -68,7 +68,7 @@ app.post('/updateWord', async function (req, res) {
 })
 
 // delete word
-app.get('/delete/:id', async function (req, res) {
+app.delete('/delete/:id', async function (req, res) {
   console.log(req.params);
 
   var word = await wordDatabase.DA.deleteWord(req.params.id);
@@ -104,7 +104,7 @@ app.post('/createShop', async function (req, res) {
 })
 
 // terminate shop
-app.get('/deleteShop/:id', async function (req, res) {
+app.delete('/deleteShop/:id', async function (req, res) {
   console.log(req.params);
 
   var delShop = await shopDatabase.DA.terminateShop(req.params.id);
