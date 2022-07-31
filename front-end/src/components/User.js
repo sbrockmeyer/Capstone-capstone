@@ -1,15 +1,15 @@
 import React from 'react'
 import EditUser from './EditUser'
 
-function User({users}) {
-	console.log(users);
+function User({user, switchScreen}) {
+	console.log(user);
 	return (
 		<div>
-			<div>First Name: {users.FName}</div>
-			<div>Last Name: {users.LName}</div>
-			<div>Username: {users.Username}</div>
-			<div>Email: {users.Email}</div>
-			<button>Edit User <EditUser id={users._id}/></button>
+			<div>First Name: {user.FName}</div>
+			<div>Last Name: {user.LName}</div>
+			<div>Username: {user.Username}</div>
+			<div>Email: {user.Email}</div>
+			<button onClick={() => switchScreen("update user")}>Edit User <EditUser id={user._id}/></button>
 		</div>
 	)
 }

@@ -12,6 +12,7 @@ exports.DA = {
         console.log(`getAllUsers`);
 
         const client = await MongoClient.connect(uri);
+
         try{
             const db = client.db(dbName);
             const collection = db.collection(collectionName);
@@ -19,13 +20,15 @@ exports.DA = {
             var query = {};
             var results = await collection.find(query).toArray();
 
-            console.log(`here are your results`);
+            console.log(`here are your results for looking for all users`);
             console.log(results);
+
+            return results;
         }catch(e){
-            console.log(`something broke here is your error in peopleDatabase.DA.getAllUsers`);
+            console.log(`uh oh something broke in peopleDatabase.DA.getAllUsers`);
             console.log(e);
         }finally{
-            client.close();
+            client.close()
         }
     },
 

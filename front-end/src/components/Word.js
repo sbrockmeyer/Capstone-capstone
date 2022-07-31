@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import EditWord from './EditWord';
 
-function Word({ term }) {
+function Word({ term, switchScreen}) {
   console.log(term);
   return (
     <>
@@ -14,7 +15,7 @@ function Word({ term }) {
         <div>French: {term.French}</div>
         <div>Polish: {term.Polish}</div>
         <div>Definition: {term.Definition}</div>
-        <button>update word <EditWord id={term._id}/></button>
+        <button onClick={() => switchScreen("update word")}>update word <EditWord id={term._id}/></button>
       </div>
     </>
   )

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Shop from './Shop';
 
 
-function AllShops() {
+function AllShops({switchScreen}) {
 
   // console.log(shops);
   // const [searchedShopName, setSearchedShopName] = useState('');
@@ -41,7 +41,7 @@ function AllShops() {
       <div>
         {allShops?.map((allShops) => (
             <div key={allShops._id}>
-            <Shop shops={allShops} />
+            <Shop shops={allShops} switchScreen={switchScreen}/>
           </div>
         ))}
       </div>

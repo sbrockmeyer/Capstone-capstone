@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import Word from './Word'
 
-function Dictionary() {
+function Dictionary({switchScreen}) {
 
   const [words, setTerms] = useState([]);
   const [searchedWord, setSearchedWord] = useState('');
@@ -30,7 +30,7 @@ function Dictionary() {
       <div>
         {words?.map((words)=>(
           <div key={words._id}>
-            <Word term={words}/>
+            <Word term={words} switchScreen={switchScreen}/>
           </div>
         ))}
       </div>

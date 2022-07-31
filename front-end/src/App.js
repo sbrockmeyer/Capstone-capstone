@@ -7,11 +7,19 @@ import Home from './components/Home';
 import CreateShop from './components/CreateShop';
 import CreateUser from './components/CreateUser';
 import CreateWord from './components/CreateWord';
+import AllUsers from  './components/AllUsers'
 import logo from './images/Logo.png';
+import EditShop from './components/EditShop';
+import EditWord from './components/EditWord';
+import EditUser from './components/EditUser';
 
 
 function App() {
   const [screen, setScreen] = useState("home");
+
+  const switchScreen = (switchScreen) => {
+    setScreen(switchScreen);
+  }
   
   return (
     <div>
@@ -25,6 +33,7 @@ function App() {
         <button className='navButton' onClick={() => setScreen("login")}>Login</button>
         <button className='navButton' onClick={() => setScreen("dictionary")}>Dictionary</button>
         <button className='navButton' onClick={() => setScreen("shops")}>See all shops</button>
+        <button className='navButton' onClick={() => setScreen("users")}>See all users</button>
       </nav>
       <br/>
       {
@@ -35,13 +44,21 @@ function App() {
         : screen === "login"?
         <Login/>
         : screen === "dictionary" ?
-        <Dictionary/>
+        <Dictionary switchScreen={switchScreen}/>
+        : screen === "update word" ?
+        <EditWord/>
         : screen === "create shop" ?
         <CreateShop/>
         : screen === "create word" ?
         <CreateWord/>
         :screen === "shops" ?
-        <AllShops/>
+        <AllShops switchScreen={switchScreen}/>
+        :screen === "users" ?
+        <AllUsers switchScreen={switchScreen}/>
+        :screen === "update user" ?
+        <EditUser/>
+        :screen === "update shop" ?
+        <EditShop/>
         : null
       }
     </div>

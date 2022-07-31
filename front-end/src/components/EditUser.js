@@ -1,6 +1,7 @@
 import React from 'react'
 
-function EditUser() {
+function EditUser({id}) {
+  console.log(id);
   return (
     <div>EditUser</div>
   )
