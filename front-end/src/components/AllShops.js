@@ -1,26 +1,21 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import EditShop from './EditShop';
 import Shop from './Shop';
 
 
-function AllShops({switchScreen}) {
+function AllShops({ switchScreen }) {
 
-  // console.log(shops);
-  // const [searchedShopName, setSearchedShopName] = useState('');
   const [allShops, setAllShops] = useState([]);
-  // const [shop, setShop] = useState([]);
-  // const [selectedShop, setSelectedShop] = useState('');
+  const [selectedShop, setSelectedShop] = useState('')
 
-    // const shopPicked = (shop)=>{
-  //   setSelectedShop(shop);
-  //   console.log(shop);
-  //   console.log(selectedShop);
-  // }
 
-  // const clearShop = () =>{
-  //   setSelectedShop('');
-  // }
+  const selectShop = (shop) =>{
+    setSelectedShop(shop);
+    console.log(shop);
+    console.log(selectedShop);
+  }
 
-  useEffect(()=>{
+  useEffect(() => {
     getShopData();
   }, []);
 
@@ -40,8 +35,11 @@ function AllShops({switchScreen}) {
     <>
       <div>
         {allShops?.map((allShops) => (
-            <div key={allShops._id}>
-            <Shop shops={allShops} switchScreen={switchScreen}/>
+          <div key={allShops._id}>
+            {selectedShop?
+            <EditShop shop={selectedShop}/>:
+            <Shop shops={allShops} switchScreen={switchScreen} select={selectShop}/>
+            }
           </div>
         ))}
       </div>

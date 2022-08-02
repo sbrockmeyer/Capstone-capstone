@@ -3,7 +3,9 @@ import React from 'react'
 function EditShop({id}) {
   console.log(id)
   return (
-    <div>EditShop</div>
+    <div>
+      hello welcome to edit shop
+    </div>
   )
 }
 

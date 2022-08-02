@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
-import EditShop from './EditShop';
+import React from 'react'
 
-function Shop({ shops, switchScreen }) {
+function Shop({ shops, switchScreen, select }) {
   console.log(shops);
 
 
@@ -13,7 +12,7 @@ function Shop({ shops, switchScreen }) {
         <div>Language: {shops.Language}</div>
         <div>Country: {shops.Country}</div>
         <div>Currncy: {shops.Currency}</div>
-        <button onClick={() => switchScreen("update shop")}>update Shop <EditShop id={shops._id} /></button>
+        <button onClick={() => switchScreen("update shop")}>update Shop</button>
         <button>Delete Shop</button>
       </div>
     </>

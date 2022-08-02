@@ -6,7 +6,7 @@ function CreateUser() {
   const [lastName, setLName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("");
 
   let handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,13 +34,12 @@ function CreateUser() {
         setUsername("");
         setMessage("user created");
       } else {
-        setMessage("not created")
+        setMessage("not created");
       }
-
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   return (
     <>
