@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <nav>
-        <img src={logo} width='115' alt='logo'/>
+        <img src={logo} width='80' alt='logo'/>
         <Link to="/">Home</Link> / 
         <Link to="/dictionary">Dictionary</Link> / 
         <Link to='/allShops'>All Shops</Link> / 

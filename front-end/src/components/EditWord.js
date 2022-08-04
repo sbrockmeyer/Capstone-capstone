@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-function EditWord({id}) {
-	console.log(id);
+function EditWord() {
+
+	const id = useParams();
+
 	return (
-		<div>EditWord</div>
+		<>
+			<div>Edit Shop</div>
+			<div>{id.shopID}</div>
+		</>
 	)
 }
 
