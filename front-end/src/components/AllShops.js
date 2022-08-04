@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import EditShop from './EditShop';
+import ShopDetails from './ShopDetails'
 import Shop from './Shop';
 
 
@@ -9,10 +10,14 @@ function AllShops() {
   const [selectedShop, setSelectedShop] = useState('')
 
 
-  const selectShop = (shop) =>{
+  const selectShop = (shop) => {
     setSelectedShop(shop);
     console.log(shop);
     console.log(selectedShop);
+  }
+
+  const clearSelectShop = () =>{
+    setSelectedShop('');
   }
 
   useEffect(() => {
@@ -34,14 +39,17 @@ function AllShops() {
   return (
     <>
       <div>
-        {allShops?.map((allShops) => (
-          <div key={allShops._id}>
-            {selectedShop?
-            <EditShop shop={selectedShop}/>:
-            <Shop shops={allShops} select={selectShop}/>
-            }
-          </div>
-        ))}
+        {
+          selectedShop ?
+            <ShopDetails shop={selectedShop} clear={clearSelectShop}/> :
+            allShops?.map((allShops) => (
+              <div key={allShops._id}>
+                {
+
+                  <Shop shops={allShops} select={selectShop} />
+                }
+              </div>
+            ))}
       </div>
     </>
   )

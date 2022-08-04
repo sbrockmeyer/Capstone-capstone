@@ -4,12 +4,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createRoot } from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import Home from "./components/Home";
 import Dictionary from './components/Dictionary';
 import Login from './components/Login';
 import AllShops from './components/AllShops';
 import AllUsers from './components/AllUsers';
+import ShopDetails from './components/ShopDetails';
+import EditShop from './components/EditShop';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -21,6 +23,7 @@ root.render(
         <Route path='/dictionary' element={<Dictionary />} />
         <Route path='/login' element={<Login />} />
         <Route path='/allShops' element={<AllShops/>}/>
+        {/* <Route path='/shop/:userId' element={<ShopDetails/>}/> */}
         <Route path='/allUsers' element={<AllUsers/>}/>
         <Route path='*' element={<h1>404 this page doesnt exist</h1>} />
       </Route>
