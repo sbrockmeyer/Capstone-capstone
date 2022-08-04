@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import User from './User';
 
-function AllUsers({ switchScreen }) {
+function AllUsers() {
 	const [users, setAllUsers] = useState([]);
 
 	const getUserData = () => {
@@ -25,7 +25,7 @@ function AllUsers({ switchScreen }) {
 			<div>
 				{users?.map((allUsers) => (
 					<div key={allUsers._id}>
-						<User user={allUsers} switchScreen={switchScreen}/>
+						<User user={allUsers} />
 					</div>
 				))}
 			</div>

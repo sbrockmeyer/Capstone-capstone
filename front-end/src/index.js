@@ -20,7 +20,7 @@ root.render(
         <Route index element={<Home />} />
         <Route path='/dictionary' element={<Dictionary />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/allShop' element={<AllShops/>}/>
+        <Route path='/allShops' element={<AllShops/>}/>
         <Route path='/allUsers' element={<AllUsers/>}/>
         <Route path='*' element={<h1>404 this page doesnt exist</h1>} />
       </Route>

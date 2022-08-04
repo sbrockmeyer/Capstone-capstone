@@ -3,7 +3,7 @@ import EditShop from './EditShop';
 import Shop from './Shop';
 
 
-function AllShops({ switchScreen }) {
+function AllShops() {
 
   const [allShops, setAllShops] = useState([]);
   const [selectedShop, setSelectedShop] = useState('')
@@ -38,7 +38,7 @@ function AllShops({ switchScreen }) {
           <div key={allShops._id}>
             {selectedShop?
             <EditShop shop={selectedShop}/>:
-            <Shop shops={allShops} switchScreen={switchScreen} select={selectShop}/>
+            <Shop shops={allShops} select={selectShop}/>
             }
           </div>
         ))}

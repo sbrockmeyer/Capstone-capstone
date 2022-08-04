@@ -40,7 +40,7 @@ function App() {
             <Link to='/login'>Login</Link>
           </li>
           <li>
-            <Link to='/AllUsers'>Users</Link>
+            <Link to='/allUsers'>All Users</Link>
           </li>
         </ul>
       </nav>
