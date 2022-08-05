@@ -1,7 +1,10 @@
 import React from 'react'
+import {useParams} from 'react-router-dom';
 
-function EditShop({id}) {
-  console.log(id)
+function EditShop() {
+  const params = useParams();
+  console.log(params);
+  // console.log(id)
   return (
     <div>
       hello welcome to edit shop

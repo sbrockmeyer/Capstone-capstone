@@ -1,6 +1,13 @@
 import React from 'react'
 
 function WordDetails({ word, clear }) {
+	const edit = () => {
+		console.log(`Edit ${word._id}`);
+	}
+
+	const delet = () => {
+		console.log(`Delete ${word._id}`)
+	}
 	return (
 		<>
 			<div className='box' onClick={() => clear()}>
@@ -14,6 +21,8 @@ function WordDetails({ word, clear }) {
 				<div>Polish: {word.Polish}</div>
 				<div>Definition: {word.Definition}</div>
 			</div>
+			<button onClick={() => edit()}>edit shop</button>
+			<button onClick={() => delet()}>delete shop</button>
 		</>
 	)
 }
