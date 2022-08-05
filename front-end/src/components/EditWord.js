@@ -1,14 +1,27 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 function EditWord() {
 
-	const id = useParams();
+	// const id = useParams();
 
 	return (
 		<>
-			<div>Edit Shop</div>
-			<div>{id.shopID}</div>
+			<div>
+				<form>
+					<input type='text' placeholder="" />
+					<input type='text' placeholder="" />
+					<input type='text' placeholder="" />
+					<input type='text' placeholder="" />
+					<input type='text' placeholder="" />
+					<input type='text' placeholder="" />
+					<input type='text' placeholder="" />
+					<input type='text' placeholder="" />
+					<input type='text' placeholder="" />
+					<input type='text' placeholder="" />
+					<button type='submit'>Edit</button>
+				</form>
+			</div>
 		</>
 	)
 }

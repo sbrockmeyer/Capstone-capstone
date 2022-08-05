@@ -1,14 +1,23 @@
 import React from 'react'
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function EditShop() {
-  const params = useParams();
-  console.log(params);
+  // const params = useParams();
+  // console.log(params);
   // console.log(id)
   return (
-    <div>
-      hello welcome to edit shop
-    </div>
+    <>
+      <div>
+        <form>
+          <input type='text' placeholder=""/>
+          <input type='text' placeholder=""/>
+          <input type='text' placeholder=""/>
+          <input type='text' placeholder=""/>
+          <input type='text' placeholder=""/>
+          <button type='submit'>Edit</button>
+        </form>
+      </div>
+    </>
   )
 }
 
