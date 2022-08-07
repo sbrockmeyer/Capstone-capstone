@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 
 function EditShop() {
-  // const params = useParams();
+  const {shopid} = useParams();
   // console.log(params);
   // console.log(id)
   return (

@@ -10,11 +10,12 @@ import Dictionary from './components/Dictionary';
 import Login from './components/Login';
 import AllShops from './components/AllShops';
 import AllUsers from './components/AllUsers';
-import ShopDetails from './components/ShopDetails';
 import EditShop from './components/EditShop';
 import CreateShop from './components/CreateShop';
 import CreateWord from './components/CreateWord';
 import CreateUser from './components/CreateUser';
+import EditUser from './components/EditUser';
+import EditWord from './components/EditWord';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -24,14 +25,16 @@ root.render(
       <Route path='/' element={<App />}>
         <Route index element={<Home />} />
         <Route path='/dictionary' element={<Dictionary />} />
+        <Route path='/editWord:wordid' element={<EditWord/>}/>
         <Route path='/createWord' element={<CreateWord/>}/>
         <Route path='/createUser' element={<CreateUser/>}/>
         <Route path='/login' element={<Login />} />
         <Route path='/createShop' element={<CreateShop/>}/>
         <Route path='/allShops' element={<AllShops />}/>
-        <Route path='/editShop:id' element={<EditShop />} />
+        <Route path='/editShop:shopid' element={<EditShop />} />
         {/* <Route path='/shop/:userId' element={<ShopDetails/>}/> */}
         <Route path='/allUsers' element={<AllUsers />} />
+        <Route path='/editUser:userid' element={<EditUser/>}/>
         <Route path='*' element={<h1>404 this page doesnt exist</h1>} />
       </Route>
     </Routes>
