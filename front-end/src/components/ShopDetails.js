@@ -13,7 +13,7 @@ function ShopDetails({ shop, clear }) {
   }
   return (
     <>
-      <div className='box' onClick={() => clear()}>
+      <div className='boxdetails' onClick={() => clear()}>
         <div>ID: {shop._id}</div>
         <div>Name: {shop.ShopName}</div>
         <div>Language: {shop.Language}</div>

@@ -15,14 +15,52 @@
     }
 }
 
+.topnav{
+    background-color: lighten($silver, 10%);
+    padding: 10px;
+    // margin: 10px;
+}
+
+.links{
+    text-decoration: none;
+    color: $black;
+    padding: 10px;
+    margin: 10px;
+    &:hover{
+        color: lighten($darkBlue, 60%);
+    }
+}
+
 div{
     background-color: $peach;
+}
+
+.boxdetails{
+    border: 5px solid $silver;
+    padding: 10px;
+    margin: auto;
+    // width: fit-content;
+    // height: fit-content;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    &:hover{
+        border: 5px solid darken($silver, 20%);
+    }
 }
 
 .box{
     border: 5px solid $silver;
     padding: 10px;
-    margin: 10px;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    &:hover{
+        border: 5px solid darken($silver, 20%);
+    }
 }
 
 h1{
@@ -35,4 +73,8 @@ h3{
 }
 form{
     text-align: center;
+}
+
+.loginForm{
+    
 }

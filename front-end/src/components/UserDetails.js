@@ -13,7 +13,7 @@ function UserDetails({ user, clear }) {
 
 	return (
 		<>
-			<div className='box' onClick={() => clear()}>
+			<div className='boxdetails' onClick={() => clear()}>
 				<div>First Name: {user.FName}</div>
 				<div>Last Name: {user.LName}</div>
 				<div>Username: {user.Username}</div>

@@ -1,8 +1,15 @@
 import React from 'react'
 
 function Login() {
+
   return (
-    <div>Login</div>
+    <>
+      <form className='loginForm'>
+        <input type='text' placeholder='username'/><br/><br/>
+        <input type='text' placeholder='password'/><br/><br/>
+        <button type='submit' >Login</button>
+      </form>
+    </>
   )
 }
 
