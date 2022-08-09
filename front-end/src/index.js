@@ -16,6 +16,8 @@ import CreateWord from './components/CreateWord';
 import CreateUser from './components/CreateUser';
 import EditUser from './components/EditUser';
 import EditWord from './components/EditWord';
+import ShopDetails from './components/ShopDetails';
+import Shop from './components/Shop';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -30,10 +32,11 @@ root.render(
         <Route path='/createUser' element={<CreateUser />} />
         <Route path='/login' element={<Login />} />
         <Route path='/createShop' element={<CreateShop />} />
-        <Route path='/allShops' element={<AllShops />}>
-          <Route path='/allShops/:shopid' element={<EditShop />} />
+        <Route path='/allShops' element={<AllShops />}/>
+        <Route path='/shopDetails' element={<ShopDetails/>}>
+          <Route path=':id' element={<EditShop />} />
         </Route>
-        {/* <Route path='/shop/:userId' element={<ShopDetails/>}/> */}
+        {/* <Route path='/allShops/:shopid' element={<EditShop />} /> */}
         <Route path='/allUsers' element={<AllUsers />} />
         <Route path='/editUser:userid' element={<EditUser />} />
         <Route path='*' element={<h1>404 this page doesnt exist</h1>} />

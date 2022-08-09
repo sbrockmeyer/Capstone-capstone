@@ -2,18 +2,18 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 
 function EditShop() {
-  const {shopid} = useParams();
-  console.log(shopid);
+  const {id} = useParams();
+  console.log(id);
   // console.log(id)
   return (
     <>
       <div>
         <form>
-          <input type='text' placeholder=""/>
-          <input type='text' placeholder=""/>
-          <input type='text' placeholder=""/>
-          <input type='text' placeholder=""/>
-          <input type='text' placeholder=""/>
+          <input type='text' placeholder=""/><br/><br/>
+          <input type='text' placeholder=""/><br/><br/>
+          <input type='text' placeholder=""/><br/><br/>
+          <input type='text' placeholder=""/><br/><br/>
+          <input type='text' placeholder=""/><br/><br/>
           <button type='submit'>Edit</button>
         </form>
       </div>

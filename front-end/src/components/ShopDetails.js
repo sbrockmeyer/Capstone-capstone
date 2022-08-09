@@ -1,11 +1,14 @@
 import React from 'react'
 import EditShop from './EditShop'
+import {Link, useParams} from 'react-router-dom';
 
 function ShopDetails({ shop, clear }) {
+  const {id} = useParams();
   console.log(shop);
+  console.log(id);
 
   const edit = () => {
-    console.log(`Edit ${shop._id}`);
+    console.log(`Edit ${id}`);
   }
 
   const delet = () => {
@@ -21,7 +24,8 @@ function ShopDetails({ shop, clear }) {
         <div>Currency: {shop.Currency}</div>
         <div>Description: {shop.Description}</div>
       </div>
-      <button onClick={() => edit()}>edit shop</button>
+      {/* <button onClick={() => edit()}>edit shop</button> */}
+      <Link to='/EditShop'>edit Shop</Link>
       <button onClick={() => delet()}>delete shop</button>
     </>
   )
