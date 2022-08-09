@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 function EditShop() {
   const {shopid} = useParams();
-  // console.log(params);
+  console.log(shopid);
   // console.log(id)
   return (
     <>
