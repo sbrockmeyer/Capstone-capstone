@@ -25,7 +25,7 @@ function ShopDetails({ shop, clear }) {
         <div>Description: {shop.Description}</div>
       </div>
       {/* <button onClick={() => edit()}>edit shop</button> */}
-      <Link to='/EditShop' param={{id:shop._id}}>edit Shop</Link>
+      <Link className='editbutton' to='/EditShop' param={{id:shop._id}}>edit Shop</Link>
       <button onClick={() => delet()}>delete shop</button>
     </>
   )

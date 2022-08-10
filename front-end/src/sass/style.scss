@@ -3,16 +3,21 @@
 @import 'button.scss';
 @import 'form.scss';
 
-.navbutton{
-    background-color: $pastelGreen;
-    border: 3px solid darken($pastelGreen, 20%);
-    color:$black;
-    cursor: pointer;
-    font-family: $second;
-    &:hover{
-        background-color: darken($pastelGreen, 30%);
-        border: 3px solid $pastelGreen;
-    }
+// .navbutton{
+//     background-color: $pastelGreen;
+//     border: 3px solid darken($pastelGreen, 20%);
+//     color:$black;
+//     cursor: pointer;
+//     font-family: $second;
+//     &:hover{
+//         background-color: darken($pastelGreen, 30%);
+//         border: 3px solid $pastelGreen;
+//     }
+// }
+
+.editbutton{
+    text-decoration: none;
+    
 }
 
 .topnav{
