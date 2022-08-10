@@ -9,7 +9,7 @@ function EditShop() {
     <>
       <div>
         <form>
-          <input type='text' placeholder=""/><br/><br/>
+          <input type='text' placeholder={id}/><br/><br/>
           <input type='text' placeholder=""/><br/><br/>
           <input type='text' placeholder=""/><br/><br/>
           <input type='text' placeholder=""/><br/><br/>

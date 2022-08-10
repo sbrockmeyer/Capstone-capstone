@@ -33,9 +33,8 @@ root.render(
         <Route path='/login' element={<Login />} />
         <Route path='/createShop' element={<CreateShop />} />
         <Route path='/allShops' element={<AllShops />}/>
-        <Route path='/shopDetails' element={<ShopDetails/>}>
-          <Route path=':id' element={<EditShop />} />
-        </Route>
+        <Route path='/shopDetails' element={<ShopDetails/>}/>
+        <Route name="editShop" path='/:id' element={<EditShop />} />
         {/* <Route path='/allShops/:shopid' element={<EditShop />} /> */}
         <Route path='/allUsers' element={<AllUsers />} />
         <Route path='/editUser:userid' element={<EditUser />} />
