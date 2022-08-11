@@ -23,7 +23,7 @@ function WordDetails({ word, clear }) {
 			</div>
 			{/* <button onClick={() => edit()}>edit shop</button> */}
 			<a href={"/editWord/" + word._id} className="editbutton">edit word</a>
-			<button onClick={() => delet()}>delete shop</button>
+			<button onClick={() => delet()}>delete word</button>
 		</>
 	)
 }
