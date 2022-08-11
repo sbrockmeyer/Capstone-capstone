@@ -1,10 +1,11 @@
 import React from 'react'
+import {useParams} from 'react-router-dom';
 
 function UserDetails({ user, clear }) {
+	const {userid} = useParams();
+	console.log(userid)
 
-	const edit = () => {
-		console.log(`Edit ${user._id}`);
-	}
+
 
 	const delet = () => {
 		console.log(`Delete ${user._id}`);
@@ -20,7 +21,8 @@ function UserDetails({ user, clear }) {
 				<div>Email: {user.Email}</div>
 				<div>Pass: {user.Pass}</div>
 			</div>
-			<button onClick={() => edit()}>edit shop</button>
+			{/* <button onClick={() => edit()}>edit shop</button> */}
+			<a href={'/editUser/' + user._id} className='editbutton'>edit User</a>
 			<button onClick={() => delet()}>delete shop</button>
 		</>
 	)

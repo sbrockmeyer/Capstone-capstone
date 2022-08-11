@@ -63,7 +63,7 @@ function EditWord() {
 	return (
 		<>
 			<div>
-				<form>
+				<form onSubmit={handleSubmit}>
 					<div>Word id: {wordid}</div>
 					<input type='text' value={eng} placeholder="English" onChange={(e) => setEnglish(e.target.value)}/><br /><br />
 					<input type='text' value={uk} placeholder="UK/Australia" onChange={(e) => setUK(e.target.value)}/><br /><br />
