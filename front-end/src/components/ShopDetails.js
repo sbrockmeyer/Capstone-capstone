@@ -3,12 +3,12 @@ import EditShop from './EditShop'
 import {Link, useParams} from 'react-router-dom';
 
 function ShopDetails({ shop, clear }) {
-  const {id} = useParams();
+  const {shopid} = useParams();
   console.log(shop);
-  console.log(id);
+  console.log(shopid);
 
   const edit = () => {
-    console.log(`Edit ${id}`);
+    console.log(`Edit ${shopid}`);
   }
 
   const delet = () => {
@@ -25,7 +25,8 @@ function ShopDetails({ shop, clear }) {
         <div>Description: {shop.Description}</div>
       </div>
       {/* <button onClick={() => edit()}>edit shop</button> */}
-      <Link className='editbutton' to='/EditShop' param={{id:shop._id}}>edit Shop</Link>
+      {/* <Link className='editbutton' to='/EditShop' param={{id:shop._id}}>edit Shop</Link> */}
+      <a href={"/editShop/" + shop._id}>edit Shop</a>
       <button onClick={() => delet()}>delete shop</button>
     </>
   )

@@ -12,7 +12,7 @@ function Shop({ shops, select }) {
         <div>Description: {shops.Description}</div>
         <div>Language: {shops.Language}</div>
         <div>Country: {shops.Country}</div>
-        <div>Currncy: {shops.Currency}</div>
+        <div>Currency: {shops.Currency}</div>
       </div>
     </>
   )
