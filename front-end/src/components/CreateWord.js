@@ -17,7 +17,7 @@ function CreateWord() {
 	const [ger, setGerman] = useState("");
 	const [swe, setSwedish] = useState("");
 	const [span, setSpanish] = useState("");
-	const [ital, setIalian] = useState("");
+	const [ital, setItalian] = useState("");
 	const [fren, setFrench] = useState("");
 	const [pol, setPolish] = useState("");
 	const [def, setDefinition] = useState("");
@@ -52,7 +52,7 @@ function CreateWord() {
 				setGerman("");
 				setSwedish("");
 				setSpanish("");
-				setIalian("");
+				setItalian("");
 				setFrench("");
 				setPolish("");
 				setDefinition("");
@@ -75,7 +75,7 @@ function CreateWord() {
 					<input type="text" value={ger} placeholder="German" onChange={(e) => setGerman(e.target.value)}/><br/><br/>
 					<input type="text" value={swe} placeholder="Swedish" onChange={(e) => setSwedish(e.target.value)}/><br/><br/>
 					<input type="text" value={span} placeholder="Spanish" onChange={(e) => setSpanish(e.target.value)}/><br/><br/>
-					<input type="text" value={ital} placeholder="Italian" onChange={(e) => setIalian(e.target.value)}/><br/><br/>
+					<input type="text" value={ital} placeholder="Italian" onChange={(e) => setItalian(e.target.value)}/><br/><br/>
 					<input type="text" value={fren} placeholder="French" onChange={(e) => setFrench(e.target.value)}/><br/><br/>
 					<input type="text" value={pol} placeholder="Polish" onChange={(e) => setPolish(e.target.value)}/><br/><br/>
 					<input type="text" value={def} placeholder="Definition" onChange={(e) => setDefinition(e.target.value)}/><br/><br/>

@@ -1,9 +1,9 @@
 import React from 'react'
+import {useParams} from 'react-router-dom';
 
 function WordDetails({ word, clear }) {
-	const edit = () => {
-		console.log(`Edit ${word._id}`);
-	}
+	const {wordid} = useParams();
+	console.log(wordid);
 
 	const delet = () => {
 		console.log(`Delete ${word._id}`)
@@ -21,7 +21,8 @@ function WordDetails({ word, clear }) {
 				<div>Polish: {word.Polish}</div>
 				<div>Definition: {word.Definition}</div>
 			</div>
-			<button onClick={() => edit()}>edit shop</button>
+			{/* <button onClick={() => edit()}>edit shop</button> */}
+			<a href={"/editWord/" + word._id} className="editbutton">edit word</a>
 			<button onClick={() => delet()}>delete shop</button>
 		</>
 	)

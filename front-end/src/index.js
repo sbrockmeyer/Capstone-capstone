@@ -27,7 +27,7 @@ root.render(
       <Route path='/' element={<App />}>
         <Route index element={<Home />} />
         <Route path='/dictionary' element={<Dictionary />} />
-        <Route path='/editWord:wordid' element={<EditWord />} />
+        <Route path='/editWord/:wordid' element={<EditWord />} />
         <Route path='/createWord' element={<CreateWord />} />
         <Route path='/createUser' element={<CreateUser />} />
         <Route path='/login' element={<Login />} />
@@ -37,7 +37,7 @@ root.render(
         <Route path='/editShop/:shopid' element={<EditShop />} />
         {/* <Route path='/allShops/:shopid' element={<EditShop />} /> */}
         <Route path='/allUsers' element={<AllUsers />} />
-        <Route path='/editUser:userid' element={<EditUser />} />
+        <Route path='/editUser/:userid' element={<EditUser />} />
         <Route path='*' element={<h1>404 this page doesnt exist</h1>} />
       </Route>
     </Routes>
