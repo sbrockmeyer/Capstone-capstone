@@ -167,6 +167,14 @@ app.post('/updateUser', async function (req, res){
 
 // logout
 
+app.delete('/deleteUser/:id', async function (req, res) {
+  console.log(req.params);
+
+  var delUser = await peopleDatabase.DA.deleteUser(req.params.id);
+  console.log(delUser);
+
+  res.json(delUser);
+})
 
 
 // port listenting

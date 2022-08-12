@@ -96,6 +96,31 @@ exports.DA = {
             client.close()
         }
     },
+    
+    deleteUser: async function(id){
+        console.log(`delete user`);
+
+        const client = await MongoClient.connect(uri);
+
+        try{
+            const db = client.db(dbName);
+            const collection = db.collection(collectionName);
+
+            var quary = {_id: new ObjectId(id)};
+            
+            var results = await collection.deleteOne(quary);
+
+            console.log(`deleted user`);
+            console.log(results);
+
+            return results;
+        }catch(e){
+            console.log(`something didnt go rigt in peopleDatabase.DA.deleteUser`);
+            console.log(e);
+        }finally{
+            client.close();
+        }
+    }
 
 
 }

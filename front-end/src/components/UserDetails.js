@@ -8,7 +8,7 @@ function UserDetails({ user, clear }) {
 
 
 	const delet = () => {
-		console.log(`Delete ${user._id}`);
+		
 	}
 
 
