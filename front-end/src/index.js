@@ -18,6 +18,7 @@ import EditUser from './components/EditUser';
 import EditWord from './components/EditWord';
 import ShopDetails from './components/ShopDetails';
 import Shop from './components/Shop';
+import DeleteWord from './components/DeleteWord';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -28,7 +29,7 @@ root.render(
         <Route index element={<Home />} />
         <Route path='/dictionary' element={<Dictionary />} />
         <Route path='/editWord/:wordid' element={<EditWord />} />
-        <Route path='/wordDetails/deleteWord/:wordid'/>
+        <Route path='/wordDetails/deleteWord/:wordid' element={<DeleteWord/>}/>
         <Route path='/createWord' element={<CreateWord />} />
         <Route path='/createUser' element={<CreateUser />} />
         <Route path='/login' element={<Login />} />
