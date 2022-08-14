@@ -5,9 +5,6 @@ function WordDetails({ word, clear }) {
 	const {wordid} = useParams();
 	console.log(wordid);
 
-	const delet = () => {
-		console.log(`Delete ${word._id}`)
-	}
 	return (
 		<>
 			<div className='boxdetails' onClick={() => clear()}>
@@ -22,8 +19,8 @@ function WordDetails({ word, clear }) {
 				<div>Definition: {word.Definition}</div>
 			</div>
 			{/* <button onClick={() => edit()}>edit shop</button> */}
-			<a href={"/editWord/" + word._id} className="editbutton">edit word</a>
-			<button onClick={() => delet()}>delete word</button>
+			<a href={"/editWord/" + word._id} className="editbutton">edit word</a><br/>
+			<a href={'/wordDetails/deleteWord/' + word._id} className="editbutton">delete word</a>
 		</>
 	)
 }
