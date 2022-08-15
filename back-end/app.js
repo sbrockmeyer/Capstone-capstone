@@ -128,7 +128,7 @@ app.post('/updateShop', async function (req, res) {
 })
 
 // get all users
-app.get('/allUsers', async function(req,res){
+app.get('/allUsers', async function (req, res) {
   var user = await peopleDatabase.DA.getAllUsers();
   console.log(`here are all the users`);
   console.log(user);
@@ -143,11 +143,11 @@ app.post('/createUser', async function (req, res) {
   var email = req.body.email;
   var username = req.body.username;
 
-  peopleDatabase.DA.createUser(firstName, lastName,username, pass, email)
+  peopleDatabase.DA.createUser(firstName, lastName, username, pass, email)
 })
 
 // update user
-app.post('/updateUser', async function (req, res){
+app.post('/updateUser', async function (req, res) {
   var pass = req.body.pass;
   var firstName = req.body.fName;
   var lastName = req.body.lastName;
@@ -161,9 +161,9 @@ app.post('/updateUser', async function (req, res){
 })
 
 // login
-// app.post('/login', async function (req, res) {
-
-// })
+app.use('/login', async function (req, res) {
+  
+})
 
 // logout
 
@@ -175,7 +175,6 @@ app.delete('/deleteUser/:id', async function (req, res) {
 
   res.json(delUser);
 })
-
 
 // port listenting
 app.listen(PORT, () => console.log(`listening at ${PORT}`));
