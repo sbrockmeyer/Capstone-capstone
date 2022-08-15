@@ -162,8 +162,10 @@ app.post('/updateUser', async function (req, res) {
 
 // login
 app.use('/login', async function (req, res) {
-  
-})
+  res.send({
+    token: 'eeeee'
+  });
+});
 
 // logout
 

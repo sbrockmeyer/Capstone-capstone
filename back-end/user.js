@@ -120,6 +120,28 @@ exports.DA = {
         }finally{
             client.close();
         }
+    },
+
+    login: async function(username, password){
+        console.log(`login`);
+        const client = await MongoClient.connect(uri);
+
+        try{
+            const db = client.db(dbName);
+            const collection = db.collection(collectionName);
+
+            var query = {username, password};
+            var results = await collection.findOne(query).toArray();
+
+            console.log(`Login!!`);
+            console.log(results);
+
+        }catch(e){
+            console.log(`something broke in peopleDatabase.DA.login`);
+            console.log(e);
+        }finally{
+            client.close();
+        }
     }
 
 
