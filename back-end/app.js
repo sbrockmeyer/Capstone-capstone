@@ -161,22 +161,26 @@ app.post('/updateUser', async function (req, res) {
 })
 
 // login
-app.use('/login', async function (req, res) {
-  res.send({
-    token: 'eeeee'
-  });
+app.post('/login', async function (req, res) {
+  const user = await findUser(req.body.username, req.body.password);
+
+  if(user){
+    return res.json({status: 'yee', user:true, username: user.username, userId: user._id})
+  }else{
+    return res.json({status: 'borked', user:false})
+  }
 });
 
 // logout
 
-app.delete('/deleteUser/:id', async function (req, res) {
-  console.log(req.params);
+// app.delete('/deleteUser/:id', async function (req, res) {
+//   console.log(req.params);
 
-  var delUser = await peopleDatabase.DA.deleteUser(req.params.id);
-  console.log(delUser);
+//   var delUser = await peopleDatabase.DA.deleteUser(req.params.id);
+//   console.log(delUser);
 
-  res.json(delUser);
-})
+//   res.json(delUser);
+// })
 
 // port listenting
 app.listen(PORT, () => console.log(`listening at ${PORT}`));
