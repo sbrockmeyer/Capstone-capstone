@@ -5,29 +5,29 @@ async function Login() {
   const [user, setUsername] = useState('');
   const [pass, setPassword] = useState('');
 
-  const data = await response.json();
-  if (data.status === 'yee') {
-    const userObject = {
-      id: data.userId,
-      username: data.username
-    }
-    window.localStorage.setItem("User", JSON.stringify(userObject));
+  // const data = await response.json();
+  // if (data.status === 'yee') {
+  //   const userObject = {
+  //     id: data.userId,
+  //     username: data.username
+  //   }
+  //   window.localStorage.setItem("User", JSON.stringify(userObject));
 
-    alert('login successful');
-    window.location.replace("");
-  } else {
-    alert('please try again')
-  }
-  let use = window.localStorage.getItem("User");
-  let userInfo = JSON.parse(use);
+  //   alert('login successful');
+  //   window.location.replace("http://localhost:3000/allShops");
+  // } else {
+  //   alert('please try again')
+  // }
+  // let use = window.localStorage.getItem("User");
+  // let userInfo = JSON.parse(use);
 
-  const logout = () => {
-    let use = window.localStorage.getItem("User");
-    window.localStorage.clear();
-    window.location.replace("");
-    console.log(use)
-  }
-  if (user == null) {
+  // const logout = () => {
+  //   let use = window.localStorage.getItem("User");
+  //   window.localStorage.clear();
+  //   window.location.replace("http://localhost:3000");
+  //   console.log(use)
+  // }
+  // if (user == null) {
     return (
       <>
         <form className='loginForm'>
@@ -37,13 +37,13 @@ async function Login() {
         </form>
       </>
     )
-  }else{
-    return(
-      <>
-        <button onClick={() => logout()}>logout</button>
-      </>
-    )
-  }
+  // }else{
+  //   return(
+  //     <>
+  //       <button onClick={() => logout()}>logout</button>
+  //     </>
+  //   )
+  // }
 }
 
 export default Login

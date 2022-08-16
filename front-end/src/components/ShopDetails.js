@@ -13,17 +13,17 @@ function ShopDetails({ shop, clear }) {
   return (
     <>
       <div className='boxdetails' onClick={() => clear()}>
-        <div>ID: {shop._id}</div>
+        {/* <div>ID: {shop._id}</div> */}
         <div>Name: {shop.ShopName}</div>
         <div>Language: {shop.Language}</div>
         <div>Country: {shop.Country}</div>
-        <div>Currency: {shop.Currency}</div>
+        {/* <div>Currency: {shop.Currency}</div> */}
         <div>Description: {shop.Description}</div>
       </div>
       {/* <button onClick={() => edit()}>edit shop</button> */}
       {/* <Link className='editbutton' to='/EditShop' param={{id:shop._id}}>edit Shop</Link> */}
-      <a href={"/editShop/" + shop._id} className="editbutton">edit Shop</a>
-      <button onClick={() => delet()}>delete shop</button>
+      <a href={"/editShop/" + shop._id} className="editbutton">edit Shop</a> <br/>
+      <a href={'/shopDetails/deleteShop/' + shop._id} className="editbutton">delete shop</a>
     </>
   )
 }

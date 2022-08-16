@@ -23,7 +23,7 @@ function UserDetails({ user, clear }) {
 			</div>
 			{/* <button onClick={() => edit()}>edit shop</button> */}
 			<a href={'/editUser/' + user._id} className='editbutton'>edit User</a>
-			<button onClick={() => delet()}>delete user</button>
+			{/* <button onClick={() => delet()}>delete user</button> */}
 		</>
 	)
 }

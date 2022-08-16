@@ -19,6 +19,7 @@ import EditWord from './components/EditWord';
 import ShopDetails from './components/ShopDetails';
 import Shop from './components/Shop';
 import DeleteWord from './components/DeleteWord';
+import DeleteShop from './components/DeleteShop';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -37,6 +38,7 @@ root.render(
         <Route path='/allShops' element={<AllShops />}/>
         <Route path='/shopDetails' element={<ShopDetails/>}/>
         <Route path='/editShop/:shopid' element={<EditShop />} />
+        <Route path='/shopDetails/delteShop/:shopid' element={<DeleteShop/>}/>
         <Route path='/allUsers' element={<AllUsers />} />
         <Route path='/editUser/:userid' element={<EditUser />} />
         <Route path='*' element={<h1>404 this page doesnt exist</h1>} />

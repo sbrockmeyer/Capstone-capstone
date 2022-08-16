@@ -10,9 +10,9 @@ function Shop({ shops, select }) {
       <div className='box' onClick={() => select(shops)}>
         <div>ShopName: {shops.ShopName}</div>
         <div>Description: {shops.Description}</div>
-        <div>Language: {shops.Language}</div>
+        {/* <div>Language: {shops.Language}</div>
         <div>Country: {shops.Country}</div>
-        <div>Currency: {shops.Currency}</div>
+        <div>Currency: {shops.Currency}</div> */}
       </div>
     </>
   )
