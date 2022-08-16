@@ -20,6 +20,7 @@ import ShopDetails from './components/ShopDetails';
 import Shop from './components/Shop';
 import DeleteWord from './components/DeleteWord';
 import DeleteShop from './components/DeleteShop';
+import Cart from './components/Cart';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -41,6 +42,7 @@ root.render(
         <Route path='/shopDetails/delteShop/:shopid' element={<DeleteShop/>}/>
         <Route path='/allUsers' element={<AllUsers />} />
         <Route path='/editUser/:userid' element={<EditUser />} />
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='*' element={<h1>404 this page doesnt exist</h1>} />
       </Route>
     </Routes>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-async function Login() {
+function Login() {
 
   const [user, setUsername] = useState('');
   const [pass, setPassword] = useState('');
@@ -30,10 +30,10 @@ async function Login() {
   // if (user == null) {
     return (
       <>
-        <form className='loginForm'>
+        <form>
           <input type='text' value={user} placeholder='username' onChange={(e) => setUsername(e.target.value)} /><br /><br />
           <input type='text' value={pass} placeholder='password' onChange={(e) => setPassword(e.target.value)} /><br /><br />
-          <button type='submit' value='Login'>Login</button>
+          <button type='submit'>Login</button>
         </form>
       </>
     )
