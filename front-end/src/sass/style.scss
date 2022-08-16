@@ -6,12 +6,23 @@
 
 .editbutton{
     text-decoration: none;
-    
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.containermain{
+    background-color: lighten($silver, 10%);
+}
+
+#logo{
+    align-items: flex-start;
 }
 
 .topnav{
     background-color: lighten($silver, 10%);
     padding: 10px;
+    text-align: center;
     // margin: 10px;
 }
 
@@ -29,10 +40,17 @@ div{
     background-color: $peach;
 }
 
+.details{
+    text-align: center;
+    margin: 10rem;
+}
+
 .boxdetails{
     border: 5px solid $silver;
     padding: 10px;
     margin: auto;
+    height: fit-content;
+    width: fit-content;
     // width: fit-content;
     // height: fit-content;
     text-align: center;
@@ -47,6 +65,7 @@ div{
     border: 5px solid $silver;
     padding: 10px;
     margin: auto;
+    margin-top: 10px;
     width: fit-content;
     height: fit-content;
     text-align: center;
@@ -67,8 +86,4 @@ h3{
 }
 form{
     text-align: center;
-}
-
-.loginForm{
-    
 }

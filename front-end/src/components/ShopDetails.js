@@ -7,11 +7,9 @@ function ShopDetails({ shop, clear }) {
   console.log(shop);
   console.log(shopid);
 
-  const delet = () => {
-    console.log(`Delete ${shop._id}`)
-  }
   return (
     <>
+    <div className='details'>
       <div className='boxdetails' onClick={() => clear()}>
         {/* <div>ID: {shop._id}</div> */}
         <div>Name: {shop.ShopName}</div>
@@ -24,6 +22,7 @@ function ShopDetails({ shop, clear }) {
       {/* <Link className='editbutton' to='/EditShop' param={{id:shop._id}}>edit Shop</Link> */}
       <a href={"/editShop/" + shop._id} className="editbutton">edit Shop</a> <br/>
       <a href={'/shopDetails/deleteShop/' + shop._id} className="editbutton">delete shop</a>
+    </div>
     </>
   )
 }

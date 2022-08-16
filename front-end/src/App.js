@@ -9,9 +9,8 @@ function App() {
   return (
     <>
     <div className='containermain'>
-        <img src={logo} width='80' alt='logo'/>
-
       <nav className='topnav'>
+        <img src={logo} width='80' alt='logo' id='logo'/>
         <Link className='links' to="/"> Home</Link> / 
         <Link className='links' to="/dictionary"> Dictionary</Link> / 
         <Link className='links' to='/allShops'> All Shops</Link> / 
