@@ -8,6 +8,7 @@ const wordDatabase = require('./term'); //wordDatabase.DA.jfoej
 const peopleDatabase = require('./user'); //peopleDatabase.DA.jfoej
 const shopDatabase = require('./shop'); //shopDatabase.DA.jfoej
 const { json } = require('express');
+const { default: User } = require('../front-end/src/components/User');
 
 // creating port and using express
 const app = express();
@@ -162,25 +163,21 @@ app.post('/updateUser', async function (req, res) {
 
 // login
 app.post('/login', async function (req, res) {
-  const user = await findUser(req.body.username, req.body.password);
+  
+  const {username, password} = req.body
+  User.findOne({username:username}, (err,user) => {
+    if(user){
+      if(password === user.password){
+        res.send({message: 'Login successful', user: user})
+      }else{
+        res.send({message: "Passworddidnt match"})
+      }
+    }else{
+      res.send({message: "User not registered"})
+    }
+  })
 
-  if(user){
-    return res.json({status: 'yee', user:true, username: user.username, userId: user._id})
-  }else{
-    return res.json({status: 'borked', user:false})
-  }
 });
-
-// logout
-
-// app.delete('/deleteUser/:id', async function (req, res) {
-//   console.log(req.params);
-
-//   var delUser = await peopleDatabase.DA.deleteUser(req.params.id);
-//   console.log(delUser);
-
-//   res.json(delUser);
-// })
 
 // port listenting
 app.listen(PORT, () => console.log(`listening at ${PORT}`));
