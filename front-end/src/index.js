@@ -24,26 +24,35 @@ import Cart from './components/Cart';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
+
+const isLoggedIn = () => {
+  return localStorage.getItem("TOKEN_KEY") != null;
+}
+
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<App />}>
-        <Route index element={<Home />} />
-        <Route path='/dictionary' element={<Dictionary />} />
-        <Route path='/editWord/:wordid' element={<EditWord />} />
-        <Route path='/wordDetails/deleteWord/:wordid' element={<DeleteWord/>}/>
-        <Route path='/createWord' element={<CreateWord />} />
+        {/* {isLoggedIn() && ( */}
+          <>
+            <Route path='/dictionary' element={<Dictionary />} />
+            <Route path='/editWord/:wordid' element={<EditWord />} />
+            <Route path='/wordDetails/deleteWord/:wordid' element={<DeleteWord />} />
+            <Route path='/createWord' element={<CreateWord />} />
+            <Route path='/createShop' element={<CreateShop />} />
+            <Route path='/allShops' element={<AllShops />} />
+            <Route path='/shopDetails' element={<ShopDetails />} />
+            <Route path='/editShop/:shopid' element={<EditShop />} />
+            <Route path='/shopDetails/delteShop/:shopid' element={<DeleteShop />} />
+            <Route path='/allUsers' element={<AllUsers />} />
+            <Route path='/editUser/:userid' element={<EditUser />} />
+            <Route path='/cart' element={<Cart />} />
+          </>
+        {/* )} */}
         <Route path='/createUser' element={<CreateUser />} />
+        <Route index element={<Home />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/createShop' element={<CreateShop />} />
-        <Route path='/allShops' element={<AllShops />}/>
-        <Route path='/shopDetails' element={<ShopDetails/>}/>
-        <Route path='/editShop/:shopid' element={<EditShop />} />
-        <Route path='/shopDetails/delteShop/:shopid' element={<DeleteShop/>}/>
-        <Route path='/allUsers' element={<AllUsers />} />
-        <Route path='/editUser/:userid' element={<EditUser />} />
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='*' element={<h1>404 this page doesnt exist</h1>} />
+        <Route path='*' element={<h1>You must login before looking at this page</h1>} />
       </Route>
     </Routes>
   </BrowserRouter>

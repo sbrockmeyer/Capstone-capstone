@@ -32,7 +32,7 @@ exports.DA = {
         }
     },
 
-    createUser: async function (firstName, lastName, username, password, email) {
+    createUser: async function (firstName, lastName, username, password, email, pic) {
         console.log(`createUser`);
 
         const client = await MongoClient.connect(uri);
@@ -46,7 +46,8 @@ exports.DA = {
                 LName: lastName,
                 Username: username,
                 Pass: password,
-                Email: email
+                Email: email,
+                Pic: pic
             }
 
             var results = await collection.insertOne(newUser);
@@ -63,7 +64,7 @@ exports.DA = {
         }
     },
 
-    updateUser: async function (id, firstName, lastName, username, password, email) {
+    updateUser: async function (id, firstName, lastName, username, password, email, pic) {
         console.log(`updateUser`);
 
         const client = await MongoClient.connect(uri);
@@ -79,7 +80,8 @@ exports.DA = {
                     LName: lastName,
                     Username: username,
                     Pass: password,
-                    Email: email
+                    Email: email,
+                    Pic: pic
                 }
             }
 

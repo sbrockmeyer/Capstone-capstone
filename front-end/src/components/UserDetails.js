@@ -17,7 +17,10 @@ function UserDetails({ user, clear }) {
 		<>
 			<div className='details'>
 				<div className='boxdetails' onClick={() => clear()}>
-					<img src={profile} width='80' alt='profile' className='profile' />
+					{user.Pic != 'N/A' ?
+						<img src={user.Pic} alt="profile pic" /> :
+						<img src={profile} width='80' alt='profile' className='profile' />
+					}
 					<div className='detaildetail'>
 						<div>First Name: {user.FName}</div>
 						{/* <div>Last Name: {user.LName}</div> */}

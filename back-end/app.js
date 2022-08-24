@@ -8,7 +8,6 @@ const wordDatabase = require('./term'); //wordDatabase.DA.jfoej
 const peopleDatabase = require('./user'); //peopleDatabase.DA.jfoej
 const shopDatabase = require('./shop'); //shopDatabase.DA.jfoej
 const { json } = require('express');
-const { default: User } = require('../front-end/src/components/User');
 
 // creating port and using express
 const app = express();

@@ -3,24 +3,16 @@ import axios from 'axios';
 
 function Login() {
 
-  const [user, setUser] = useState({
-    username:"",
-    pass:""
-  });
+  const [username, setUsername] = useState('');
+  const [pass, setPassword] = useState('');
 
-  const handleChange = (e) =>{
-    const {user, value} = e.target
-    setUser({
-      ...user,
-      [name]: value
-    })
-  }
+
 
     return (
       <>
         <form>
-          <input type='text' value={user.username} placeholder='username' onChange={handleChange} /><br /><br />
-          <input type='password' value={user.pass} placeholder='password' onChange={handleChange} /><br /><br />
+          <input type='text' placeholder='username' value={username}/><br /><br />
+          <input type='password'  placeholder='password' value={pass} /><br /><br />
           <button type='submit'>Login</button>
         </form>
       </>
