@@ -142,8 +142,9 @@ app.post('/createUser', async function (req, res) {
   var lastName = req.body.lName;
   var email = req.body.email;
   var username = req.body.username;
+  var pic = req.body.pic;
 
-  peopleDatabase.DA.createUser(firstName, lastName, username, pass, email)
+  peopleDatabase.DA.createUser(firstName, lastName, username, pass, email, pic)
 })
 
 // update user
@@ -154,8 +155,9 @@ app.post('/updateUser', async function (req, res) {
   var email = req.body.email;
   var id = req.body.id;
   var username = req.body.username;
+  var pic = req.body.pic
 
-  var updateUser = await peopleDatabase.DA.updateUser(id, firstName, lastName, username, pass, email);
+  var updateUser = await peopleDatabase.DA.updateUser(id, firstName, lastName, username, pass, email, pic);
 
   res.json(updateUser);
 })

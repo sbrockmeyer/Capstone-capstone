@@ -6,21 +6,11 @@ function UserDetails({ user, clear }) {
 	const { userid } = useParams();
 	console.log(userid)
 
-
-
-	const delet = () => {
-
-	}
-
-
 	return (
 		<>
 			<div className='details'>
 				<div className='boxdetails' onClick={() => clear()}>
-					{user.Pic != 'N/A' ?
-						<img src={user.Pic} alt="profile pic" /> :
-						<img src={profile} width='80' alt='profile' className='profile' />
-					}
+					<img src={user.Pic} alt="profile pic" /> 
 					<div className='detaildetail'>
 						<div>First Name: {user.FName}</div>
 						{/* <div>Last Name: {user.LName}</div> */}

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import profile from '../images/profilepicunknown.png';
 
 function CreateUser() {
   const [pass, setPassword] = useState("");
@@ -6,6 +7,7 @@ function CreateUser() {
   const [lastName, setLName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [pic, setProfilePic] = useState(profile);
   const [message, setMessage] = useState("");
 
   let handleSubmit = async (e) => {
@@ -22,7 +24,8 @@ function CreateUser() {
           fName: firstName,
           lName: lastName,
           email: email,
-          username: username
+          username: username,
+          pic: pic
         }),
       });
 
@@ -32,6 +35,7 @@ function CreateUser() {
         setFName("");
         setLName("");
         setUsername("");
+        setProfilePic("");
         setMessage("user created");
       } else {
         setMessage("not created");
@@ -50,6 +54,7 @@ function CreateUser() {
           <input type="text" value={username} placeholder="username" onChange={(e) => setUsername(e.target.value)}/><br/><br/>
           <input type="text" value={email} placeholder="email" onChange={(e) => setEmail(e.target.value)}/><br/><br/>
           <input type="text" value={pass} placeholder="password" onChange={(e) => setPassword(e.target.value)}/><br/><br/>
+          <input type="text" value={pic} placeholder="Profile pic" onChange={(e) => setProfilePic(e.target.value)}/><br/><br/>
 
           <button type='submit'>create user</button>
 

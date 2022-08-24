@@ -6,10 +6,7 @@ function User({ user, select }) {
 	console.log(user);
 	return (
 		<div className='box' onClick={() => select(user)}>
-			{user.Pic != 'N/A' ?
-				<img src={user.Pic} alt="profile pic" /> :
-				<img src={profile} width='80' alt='profile' className='profile' />
-			}
+			<img src={user.Pic} alt="profile pic" className='profile' />
 			{/* <div>First Name: {user.FName}</div>
 			<div>Last Name: {user.LName}</div> */}
 			<div>Username: {user.Username}</div>
