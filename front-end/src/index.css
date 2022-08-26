@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Mochiy+Pop+P+One&display=swap');
+
 html{
     background-color: #ffbfa0;
+    font-family: 'Edu VIC WA NT Beginner';
     /* margin: 10px; */
 }

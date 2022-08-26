@@ -62,17 +62,26 @@ function EditWord() {
 
 	return (
 		<>
-			<div>
-				<form onSubmit={handleSubmit}>
-					<div>Word id: {wordid}</div>
+			<div className='formbox'>
+				<form onSubmit={handleSubmit} className='formyform'>
+					{/* <div>Word id: {wordid}</div> */}
+					<label>English:</label><br/>
 					<input type='text' value={eng} placeholder="English" onChange={(e) => setEnglish(e.target.value)}/><br /><br />
+					<lable>UK/Australia:</lable><br/>
 					<input type='text' value={uk} placeholder="UK/Australia" onChange={(e) => setUK(e.target.value)}/><br /><br />
+					<label>German:</label><br/>
 					<input type='text' value={ger} placeholder="German" onChange={(e) => setGerman(e.target.value)}/><br /><br />
+					<label>Swedish:</label><br/>
 					<input type='text' value={swe} placeholder="Swedish" onChange={(e) => setSwedish(e.target.value)}/><br /><br />
+					<lable>Spanish:</lable><br/>
 					<input type='text' value={span} placeholder="Spanish" onChange={(e) => setSpanish(e.target.value)}/><br /><br />
+					<lable>Italian:</lable><br/>
 					<input type='text' value={ital} placeholder="Italian" onChange={(e) => setItalian(e.target.value)}/><br /><br />
+					<lable>French:</lable><br/>
 					<input type='text' value={fren} placeholder="French" onChange={(e) => setFrench(e.target.value)}/><br /><br />
+					<lable>Polish:</lable><br/>
 					<input type='text' value={pol} placeholder="Polish" onChange={(e) => setPolish(e.target.value)}/><br /><br />
+					<lable>Definition:</lable><br/>
 					<input type='text' value={def} placeholder="Definition" onChange={(e) => setDefinition(e.target.value)}/><br /><br />
 					{/* <input type='text' value={} placeholder="" onChange={(e) => (e.target.value)}/><br /><br /> */}
 					<button type='submit'>Edit</button>

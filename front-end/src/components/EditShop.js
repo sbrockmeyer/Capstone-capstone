@@ -51,13 +51,18 @@ function EditShop() {
 
   return (
     <>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div>Shop id: {shopid}</div><br/>
+      <div className='formbox'>
+        <form onSubmit={handleSubmit} className='formyform'>
+          {/* <div>Shop id: {shopid}</div><br/> */}
+          <label>Shop Name:</label><br/>
           <input type='text' value={shopName} placeholder="shop name" onChange={(e) =>setShopName(e.target.value)}/><br/><br/>
+          <label>Description:</label><br/>
           <input type='text' value={description} placeholder="description" onChange={(e) => setDescription(e.target.value)}/><br/><br/>
+          <label>Language</label><br/>
           <input type='text' value={lang} placeholder="language" onChange={(e) => setLanguage(e.target.value)}/><br/><br/>
+          <label>Country</label><br/>
           <input type='text' value={country} placeholder="country" onChange={(e) => setCountry(e.target.value)}/><br/><br/>
+          <label>Currency</label><br/>
           <input type='text' value={currency} placeholder="currency" onChange={(e) => setCurrency(e.target.value)}/><br/><br/>
           <button type='submit'>Edit</button>
           <div>{message ? <p>{message} </p> : null}</div>

@@ -49,13 +49,18 @@ function EditUser() {
 
   return (
     <>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div>User ID: {userid}</div>
+      <div className='formbox'>
+        <form onSubmit={handleSubmit} className='formyform'>
+          {/* <div>User ID: {userid}</div> */}
+          <label>First Name:</label><br/>
           <input type='text' value={firstName} placeholder="First Name" onChange={(e) => setFName(e.target.value)}/><br/><br/>
+          <label>Last Name:</label><br/>
           <input type='text' value={lastName} placeholder="Last Name" onChange={(e) => setLName(e.target.value)}/><br/><br/>
+          <label>Username</label><br/>
           <input type='text' value={username} placeholder="Username" onChange={(e) => setUsername(e.target.value)}/><br/><br/>
+          <label>Email:</label><br/>
           <input type='text' value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)}/><br/><br/>
+          <label>Password:</label><br/>
           <input type='text' value={pass} placeholder="Password" onChange={(e) => setPassword(e.target.value)}/><br/><br/>
           <button type='submit'>Edit</button>
           <div>{message ? <p>{message}</p> : null}</div>

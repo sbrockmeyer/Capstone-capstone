@@ -68,16 +68,25 @@ function CreateWord() {
 
 	return (
 		<>
-			<div>
-				<form onSubmit={handleSubmit}>
+			<div className='formbox'>
+				<form onSubmit={handleSubmit} className='formyform'>
+					<label>English:</label><br/>
 					<input type="text" value={eng} placeholder="English" onChange={(e) => setEnglish(e.target.value)}/><br/><br/>
+					<label>UK/Australia:</label><br/>
 					<input type="text" value={uk} placeholder="UK/Australia" onChange={(e) => setUK(e.target.value)}/><br/><br/>
+					<label>German:</label><br/>
 					<input type="text" value={ger} placeholder="German" onChange={(e) => setGerman(e.target.value)}/><br/><br/>
+					<label>Swedish:</label><br/>
 					<input type="text" value={swe} placeholder="Swedish" onChange={(e) => setSwedish(e.target.value)}/><br/><br/>
+					<label>Spanish:</label><br/>
 					<input type="text" value={span} placeholder="Spanish" onChange={(e) => setSpanish(e.target.value)}/><br/><br/>
+					<label>Italian:</label><br/>
 					<input type="text" value={ital} placeholder="Italian" onChange={(e) => setItalian(e.target.value)}/><br/><br/>
+					<label>French:</label><br/>
 					<input type="text" value={fren} placeholder="French" onChange={(e) => setFrench(e.target.value)}/><br/><br/>
+					<label>Polish:</label><br/>
 					<input type="text" value={pol} placeholder="Polish" onChange={(e) => setPolish(e.target.value)}/><br/><br/>
+					<label>Definition:</label><br/>
 					<input type="text" value={def} placeholder="Definition" onChange={(e) => setDefinition(e.target.value)}/><br/><br/>
 
 					<button type='submit'>Create Word</button>

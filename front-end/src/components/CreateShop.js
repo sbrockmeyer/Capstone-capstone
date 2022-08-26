@@ -43,8 +43,9 @@ function CreateShop() {
 
 	return (
 		<>
-			<div>
-				<form onSubmit={handleSubmit}>
+			<div className='formbox'>
+				<form onSubmit={handleSubmit} className='formyform'>
+					<label>Shop Name:</label><br/>
 					<input type='text' value={shopName} placeholder="Shop Name" onChange={(e) => setNameShop(e.target.value)} /><br/><br/>
 					<input type='text' value={description} placeholder="shop description" onChange={(e) => setDescription(e.target.value)}/><br/><br/>
 					<input type='text' value={lang} placeholder="language" onChange={(e)=>setLanguage(e.target.value)}/><br/><br/>

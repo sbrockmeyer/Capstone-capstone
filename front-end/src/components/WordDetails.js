@@ -8,7 +8,7 @@ function WordDetails({ word, clear }) {
 	return (
 		<>
 			<div className='details'>
-				<div className='boxdetails' onClick={() => clear()}>
+				<div className='boxdetailsWord' onClick={() => clear()}>
 					<div>English: {word.English}</div>
 					<div>UK/Australia: {word.UK} </div>
 					<div>German: {word.German}</div>

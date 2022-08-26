@@ -47,13 +47,19 @@ function CreateUser() {
 
   return (
     <>
-      <div>
-        <form onSubmit={handleSubmit}>
+      <div className='formbox'>
+        <form onSubmit={handleSubmit} className='formyform'>
+          <label>First Name:</label><br/>
           <input type="text" value={firstName} placeholder="first name" onChange={(e) => setFName(e.target.value)}/><br/><br/>
+          <label>Last Name</label><br/>
           <input type="text" value={lastName} placeholder="last name" onChange={(e) => setLName(e.target.value)}/><br/><br/>
+          <label>Username:</label><br/>
           <input type="text" value={username} placeholder="username" onChange={(e) => setUsername(e.target.value)}/><br/><br/>
+          <label>Email:</label><br/>
           <input type="text" value={email} placeholder="email" onChange={(e) => setEmail(e.target.value)}/><br/><br/>
+          <label>Password</label><br/>
           <input type="text" value={pass} placeholder="password" onChange={(e) => setPassword(e.target.value)}/><br/><br/>
+          <label>Profile Picture:</label><br/>
           <input type="text" value={pic} placeholder="Profile pic" onChange={(e) => setProfilePic(e.target.value)}/><br/><br/>
 
           <button type='submit'>create user</button>
