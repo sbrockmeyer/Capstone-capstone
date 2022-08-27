@@ -5,6 +5,7 @@ function Word({ term, select}) {
   console.log(term);
   return (
     <>
+    <div >
       <div className='box' onClick={() => select(term)}>
         <div>English: {term.English}</div>
         <div>UK/Australia: {term.UK} </div>
@@ -17,6 +18,7 @@ function Word({ term, select}) {
         {/* <div>Definition: {term.Definition}</div> */}
         {/* <button onClick={() => switchScreen("update word")}>update word <EditWord id={term._id}/></button> */}
       </div>
+    </div>
     </>
   )
 }

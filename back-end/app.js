@@ -95,10 +95,11 @@ app.post('/createShop', async function (req, res) {
   var lang = req.body.language;
   var count = req.body.country;
   var curr = req.body.currency;
+  var pic = req.body.pic
 
   console.log('rawr');
 
-  var shop = await shopDatabase.DA.addShop(name, des, lang, count, curr);
+  var shop = await shopDatabase.DA.addShop(name, des, lang, count, curr, pic);
 
   res.json(shop);
 })
@@ -121,8 +122,9 @@ app.post('/updateShop', async function (req, res) {
   var lang = req.body.language;
   var count = req.body.country;
   var curr = req.body.currency;
+  var pic = req.body.pic
 
-  var upShop = await shopDatabase.DA.editShop(id, name, des, lang, count, curr);
+  var upShop = await shopDatabase.DA.editShop(id, name, des, lang, count, curr, pic);
 
   res.json(upShop);
 })

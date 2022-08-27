@@ -2,7 +2,33 @@
 @import 'text.scss';
 @import 'button.scss';
 
+.containerbox{
+    // text-align: center;
+    // display: flex;
+    // flex-wrap: wrap ;
+    // margin-right: auto;
+    // margin-left: auto;
+    // margin: 30px;
+    // padding: 10px;
+}
+
+
+.cart{
+    border: 5px solid $silver;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    cursor: pointer;
+    font-family: $second;
+    font-size: 20px;
+    user-select: none;
+}
+
 .box{
+    // display: flex;
     border: 5px solid $silver;
     padding: 10px;
     margin: auto;
@@ -15,7 +41,7 @@
     font-size: 20px;
     user-select: none;
     &:hover{
-        padding: 20px;
+        padding: 25px;
         border: 5px solid darken($silver, 20%);
     }
 }

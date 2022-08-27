@@ -38,7 +38,7 @@ function AllShops() {
 
   return (
     <>
-      <div>
+      <div className='containerbox'>
         {
           selectedShop ?
             <ShopDetails shop={selectedShop} clear={clearSelectShop}/> :

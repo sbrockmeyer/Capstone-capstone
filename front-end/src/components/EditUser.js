@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {useParams} from 'react-router-dom';
+import profile from '../images/profilepicunknown.png';
+
 
 function EditUser() {
   const {userid} = useParams();
@@ -10,6 +12,7 @@ function EditUser() {
   const [lastName, setLName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [pic, setProfilePic] = useState(profile);
   const [message, setMessage] = useState("");
 
   let handleSubmit = async (e) =>{
@@ -27,7 +30,8 @@ function EditUser() {
           fName: firstName,
           lName: lastName,
           email: email,
-          username: username
+          username: username,
+          pic: pic
         }),
       });
 
@@ -37,6 +41,7 @@ function EditUser() {
         setLName("");
         setEmail("");
         setUsername("");
+        setProfilePic("");
         setMessage("user updated");
       }else{
         setMessage("user not updated");
@@ -62,6 +67,8 @@ function EditUser() {
           <input type='text' value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)}/><br/><br/>
           <label>Password:</label><br/>
           <input type='text' value={pass} placeholder="Password" onChange={(e) => setPassword(e.target.value)}/><br/><br/>
+          <label>Profile Picture:</label><br/>
+          <input type="text" value={pic} placeholder="Profile pic" onChange={(e) => setProfilePic(e.target.value)}/><br/><br/>
           <button type='submit'>Edit</button>
           <div>{message ? <p>{message}</p> : null}</div>
         </form>

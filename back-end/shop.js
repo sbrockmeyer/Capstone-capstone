@@ -34,7 +34,7 @@ exports.DA = {
     },
 
     // allows users to add/create a shop
-    addShop: async function (shopName, description, language, country, currency) {
+    addShop: async function (shopName, description, language, country, currency, pic) {
         console.log(`add/create shop`);
 
         const client = await MongoClient.connect(uri);
@@ -48,7 +48,8 @@ exports.DA = {
                 Description: description,
                 Language: language,
                 Country: country,
-                Currency: currency
+                Currency: currency,
+                Pic: pic
             }
 
             var results = await collection.insertOne(newShop);
@@ -92,7 +93,7 @@ exports.DA = {
     },
 
     // users can edit their shop
-    editShop: async function (id, shopName, description, language, country, currency) {
+    editShop: async function (id, shopName, description, language, country, currency, pic) {
         console.log(`editShop`);
 
         const client = await MongoClient.connect(uri);
@@ -108,7 +109,8 @@ exports.DA = {
                     Description: description,
                     Language: language,
                     Country: country,
-                    Currency: currency
+                    Currency: currency,
+                    Pic: pic
                 }
             }
 

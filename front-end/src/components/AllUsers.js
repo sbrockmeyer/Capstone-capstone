@@ -34,7 +34,7 @@ function AllUsers() {
 
 	return (
 		<>
-			<div>
+			<div className='containerbox'>
 				{
 					selectedUser ?
 						<UserDetails user={selectedUser} clear={clearUser} /> :

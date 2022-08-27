@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import { useParams } from 'react-router-dom';
+import shopimg from '../images/shop.png'
+
 
 function EditShop() {
   const {shopid} = useParams();
@@ -10,6 +12,7 @@ function EditShop() {
   const [lang, setLanguage] = useState('');
   const [country, setCountry] = useState('');
   const [currency, setCurrency] = useState('');
+  const [pic, setProfilePic] = useState(shopimg);
   const [message, setMessage] = useState('');
 
   let handleSubmit = async (e) =>{
@@ -28,6 +31,7 @@ function EditShop() {
           language: lang,
           country: country,
           currency: currency,
+          pic: pic
         }),
       });
 
@@ -37,6 +41,7 @@ function EditShop() {
         setLanguage("");
         setCountry("");
         setCurrency("");
+        setProfilePic("");
         setMessage("your shop has been updated");
       }else{
         setMessage("nothing happened");
@@ -64,6 +69,8 @@ function EditShop() {
           <input type='text' value={country} placeholder="country" onChange={(e) => setCountry(e.target.value)}/><br/><br/>
           <label>Currency</label><br/>
           <input type='text' value={currency} placeholder="currency" onChange={(e) => setCurrency(e.target.value)}/><br/><br/>
+          <label>Shop Picture:</label><br />
+					<input type="text" value={pic} placeholder="Profile pic" onChange={(e) => setProfilePic(e.target.value)} /><br /><br />
           <button type='submit'>Edit</button>
           <div>{message ? <p>{message} </p> : null}</div>
         </form>

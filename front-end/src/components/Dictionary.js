@@ -40,7 +40,7 @@ function Dictionary() {
 
   return (
     <>
-      <div>
+      <div className='containerbox'>
         {selectedWord ?
           <WordDetails word={selectedWord} clear={clearSelectedWord}/> :
           words?.map((words) => (

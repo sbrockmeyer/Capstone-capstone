@@ -3,9 +3,10 @@
 @import 'button.scss';
 
 #logo{
+    // display: flex;
     align-items: flex-start;
     margin-left: 5px;
-    margin-right: 300px;
+    // margin-right: 300px;
 }
 
 #shoppingcart{
@@ -15,4 +16,10 @@
 .profile{
     margin: 10px;
     width: 80px;
+}
+
+.logohome{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
