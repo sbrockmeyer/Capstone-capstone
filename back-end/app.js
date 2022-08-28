@@ -165,21 +165,10 @@ app.post('/updateUser', async function (req, res) {
 })
 
 // login
-app.post('/login', async function (req, res) {
-  
-  const {username, password} = req.body
-  User.findOne({username:username}, (err,user) => {
-    if(user){
-      if(password === user.password){
-        res.send({message: 'Login successful', user: user})
-      }else{
-        res.send({message: "Passworddidnt match"})
-      }
-    }else{
-      res.send({message: "User not registered"})
-    }
+app.use('/login', function (req, res) {
+  res.send({
+    token:'test123'
   })
-
 });
 
 // port listenting

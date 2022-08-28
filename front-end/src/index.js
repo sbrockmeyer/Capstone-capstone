@@ -25,15 +25,22 @@ import Cart from './components/Cart';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
-const isLoggedIn = () => {
-  return localStorage.getItem("TOKEN_KEY") != null;
+function setToken(userToken){
+  sessionStorage.setItem('token',JSON.stringify(userToken));
 }
+
+function getToken(){
+  const tokenString= sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken?.token
+}
+
+const token = getToken();
 
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<App />}>
-        {/* {isLoggedIn() && ( */}
           <>
             <Route path='/dictionary' element={<Dictionary />} />
             <Route path='/editWord/:wordid' element={<EditWord />} />
@@ -48,10 +55,9 @@ root.render(
             <Route path='/editUser/:userid' element={<EditUser />} />
             <Route path='/cart' element={<Cart />} />
           </>
-        {/* )} */}
         <Route path='/createUser' element={<CreateUser />} />
         <Route index element={<Home />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<Login setToken={setToken}/>} />
         <Route path='*' element={<h1>You must login before looking at this page</h1>} />
       </Route>
     </Routes>

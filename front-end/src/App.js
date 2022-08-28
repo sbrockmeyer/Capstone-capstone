@@ -1,9 +1,13 @@
 import './sass/style.scss';
+import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import logo from './images/Logo.png'
 import shoppingcart from './images/shopcart.png'
+import Login from './components/Login';
 
 function App() {
+
+  const [token, setToken] = useState();
 
 
   return (
@@ -14,6 +18,7 @@ function App() {
             Yarnaholic
             <img src={logo} width='80' alt='logo' id='logo' />
           </h3>
+          {/* { !token  <Login setToken={setToken} />} */}
           <Link className='links' to="/"> Home</Link> /
           <Link className='links' to="/dictionary"> Dictionary</Link> /
           <Link className='links' to='/allShops'> All Shops</Link> /
