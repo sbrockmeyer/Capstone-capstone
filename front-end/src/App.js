@@ -18,7 +18,6 @@ function App() {
             Yarnaholic
             <img src={logo} width='80' alt='logo' id='logo' />
           </h3>
-          {/* { !token  <Login setToken={setToken} />} */}
           <Link className='links' to="/"> Home</Link> /
           <Link className='links' to="/dictionary"> Dictionary</Link> /
           <Link className='links' to='/allShops'> All Shops</Link> /

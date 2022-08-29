@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import profile from '../images/profilepicunknown.png';
+import { Outlet, Link } from 'react-router-dom';
+
 
 function CreateUser() {
   const [pass, setPassword] = useState("");
@@ -63,7 +65,7 @@ function CreateUser() {
           <input type="text" value={pic} placeholder="Profile pic" onChange={(e) => setProfilePic(e.target.value)}/><br/><br/>
 
           <button type='submit'>create user</button>
-
+          <Link className='editbutton' to='/login'> Login</Link>
           <div>{message ? <p>{message}</p> : null}</div>
         </form>
       </div>

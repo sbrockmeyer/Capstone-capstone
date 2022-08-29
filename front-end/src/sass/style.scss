@@ -6,7 +6,7 @@
 @import 'img.scss';
 
 
-.editbutton{
+.editbutton {
     text-decoration: none;
     padding: 10px;
     margin: 10px;
@@ -14,51 +14,54 @@
     font-family: $second;
 }
 
-.containermain{
+.containermain {
     background-color: lighten($silver, 10%);
     font-family: $second;
     font-size: 20px;
 }
 
-.title{
-
+.title {
+    text-align: center;
 }
 
-.topnav{
+.topnav {
     background-color: lighten($silver, 10%);
     padding: 10px;
     text-align: center;
     // margin: 10px;
 }
 
-.links{
+.links {
     text-decoration: none;
     color: $black;
     padding: 10px;
     margin: 10px;
-    &:hover{
+
+    &:hover {
         color: lighten($darkBlue, 60%);
     }
 }
 
-div{
+div {
     background-color: $peach;
 }
 
-.details{
+.details {
     text-align: center;
     margin: 10rem;
 }
 
 
-h1{
+h1 {
     font-family: $main;
     text-align: center;
 }
-h3{
+
+h3 {
     font-family: $second;
     text-align: center;
 }
-form{
+
+form {
     text-align: center;
 }
