@@ -21,11 +21,11 @@ function Login({setToken}) {
   const [pass, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
-  let navigate = useNavigate();
-  const routeChange = () =>{
-    let path ='/'
-    navigate(path)
-  }
+  // let navigate = useNavigate();
+  // const routeChange = () =>{
+  //   let path ='/'
+  //   navigate(path)
+  // }
 
   const handleSubmit = (e ) =>{
     e.preventDefault();
@@ -42,8 +42,8 @@ function Login({setToken}) {
           <input type='text' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)}/><br /><br />
           <label>Password:</label><br />
           <input type='password' placeholder='password' value={pass} onChange={(e) => setPassword(e.target.value)}/><br /><br />
-          <div>{message ? <p>{message}</p> : null}</div>
-          <button type='submit' onClick={routeChange}>Login</button><br/>
+          {/* <div>{message ? <p>{message}</p> : null}</div> */}
+          <button type='submit'>Login</button><br/>
           dont have an account?
           <Link className='editbutton' to='/createUser'> Create User</Link>
         </form>
